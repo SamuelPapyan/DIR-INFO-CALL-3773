@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Post</title>
+    <script type="module" src="../js/pages/post-create.js"></script>
+</head>
+<body>
+    <h1>Homepage</h1>
+    <a href="/views/posts.html">Posts</a><br>
+    <a href="/views/post-create.html">New Post</a><br>
+    <a href="/views/organizations.html">Organizations</a><br>
+    <a href="/views/organization-create.html">New Organization</a><br>
+    <a href="/views/login.html">Login</a><br>
+    <a href="/views/register.html">Register</a><br>
+    <ul>
+        <li>
+            <a href="#" class="locale" locale-lang="hy_AM">Հայ</a>
+        </li>
+        <li>
+            <a href="#" class="locale" locale-lang="en_US">Eng</a>
+        </li>
+        <li>
+            <a href="#" class="locale" locale-lang="ru_RU">Рус</a>
+        </li>
+    </ul>
+    <div id="create-box">
+        <h2 id="localize-createPost"></h2>
+        <label>Title</label>
+        <input type="text" name="title"><br><br>
+        <label>Image</label>
+        <input type="file" name="image"><br><br>
+        <label>Description</label>
+        <input type="text" name="description"><br><br>
+        <button id="create">Create Post</button>
+    </div>
+</body>
+</html>

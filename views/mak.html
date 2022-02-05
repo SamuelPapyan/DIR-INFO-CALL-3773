@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!-- Style -->
+
+    <link rel="stylesheet" href="../css/layout.css" type="text/css">
+    <link rel="stylesheet" href="../css/category.css" type="text/css">
+    <script type="module" src="../js/pages/category.js"></script>
+    <link rel="stylesheet" href="../css/category_beta.css" type="text/css">
+    <title>Category - 1</title>
+    <style>
+        #content .col1 ul li{
+            font-size:18px;
+        }
+        #mak-info p{
+            margin:0;
+        }
+        #mak-info{
+            margin-bottom:20px;
+        }
+        #mak-info ul{
+            margin-top:20px;
+        }
+        #mak-info ul li{
+            margin-left:10px;
+        }
+        #organizations{
+            display: none;
+        }
+        #container .col2{
+            height:500px;
+            overflow-x:hidden;
+            overflow-y:auto;
+        }
+        .fa{
+            margin-right:10px;
+        }
+        #content .col1{
+            height:480px;
+        }
+        #subcats li{
+            text-transform: uppercase;
+        }
+    </style>
+    <script>
+        window.addEventListener('load',async()=>{
+            document.querySelector('#blog-link').addEventListener('click',(event)=>{
+                event.preventDefault();
+                if(window.localStorage.getItem('samvel_directory_user_token')){
+                    window.location.href = "/views/blog.html";
+                }
+                else{
+                    window.location.href = "/views/login.html";
+                }
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../images/DIR_INFO_CALL_LOGO_V2.PNG" type="image/png" size="16x16">
+</head>
+<body>
+<div id="menu">
+    <div class="col0">
+        <a href="tel: 3773">
+            <img src="../images/call_us_3.png" id="callUs" alt="">
+        </a>
+    </div>
+    <div class="col1">
+        <a href="/views/about_1.html">About Us</a>
+        <a href="/views/send-mail.html">Contact Us</a>
+        <a href="/views/categories.html">Categories</a>
+        <a href="/views/price_list.html">Price List</a>
+        <a href="/views/blog.html" id="blog-link">Blog</a>
+    </div>
+    <div id="logo">
+        <a href="/views">
+            <img src="../images/DIR_INFO_CALL_LOGO_V2.png" alt="">
+        </a>
+    </div>
+    <div class="col2">
+        <a href="#" class="locale" locale-lang="hy_AM">Հայ</a> <!--<img src="https://img5.goodfon.ru/wallpaper/nbig/6/43/armenia-flag-armenian-armenian-flag-flag-of-armenia-republic.jpg" alt="arm_lang">-->
+        <a href="#" class="locale" locale-lang="en_US">Eng</a> <!--<img src="https://tekinfarmed.com/images/en.png" alt="eng_lang">-->
+        <a href="#" class="locale" locale-lang="ru_RU">Рус</a> <!--<img src="https://practicalfunctionalassessment.files.wordpress.com/2020/12/russian-flag-russian-flag-russia-flag-of-russia.jpg" alt="rus_lang">-->
+    </div>
+    <div class="col3">
+        <a id="loginUrl" href="/views/login.html">Login</a>
+        <a href="/views/register.html">Sign Up</a>
+    </div>
+
+</div>
+<div id="container">
+    <div id="content">
+
+        <div class="col1">
+            <p><a href="/views/categories.html"><img src="../images/category_minilogo.jpg" width="100" alt=""></a> &raquo; <a
+                    href="/views/mak.html">Միջազգային կազմակերպություններ</a></p>
+            <ul style="background-color:powderblue;border-radius:25px;">
+                <div id="subcats">
+                    <li><a href="/views/mak.html">ՄԱԿ</a></li>
+                    <li><a target="_blank" href="https://www.embassy.am/am/">Դեսպանատներ</a></li>
+                    <li><a target="_blank" href="https://www.embassy.am/am/">Հյուպատոսություններ</a></li>
+                    <li><a target="_blank" href="https://www.embassy.am/am/">Ներկայացուցչություններ</a></li>
+                </div>
+                <div class="short-info" style="margin-top:100px;margin-bottom:0;">
+                    <!--
+                    <h3>Հարգելի օգտվող,  խնդրում ենք</h3>
+                    <ul>
+                        <li><span style="color:red;">-</span> Կազմակերպության հետ կապվելիս
+                            նշել  <span style="color:red;">«3773 dir.info.call»</span> Տեղեկատուն
+                            որպես տեղեկությունների աղբյուր:</li>
+                        <li><span style="color:red;">-</span> Հայտնել տեղեկություններում
+                            անճշտությունների մասին<br>
+                            <span style="color:red;">«3773 dir.info.call»</span> Տեղեկատու:</li>
+                    </ul>
+                    -->
+                    <img src="../images/infobox2_5.png" alt="" style="width:100%;margin:0;">
+                </div>
+            </ul>
+        </div>
+        <div class="col2">
+            <h1>ՄԱԿ</h1>
+            <div id="mak-info">
+                <b>
+                <p style="margin-bottom:10px;"><img src="../images/men-in-realred.png" style="margin-right:8px;" width="20" alt=""> Շոմբի Շարփ  ՄԱԿ-ի մշտական համակարգող</p>
+                <p><i class="fa fa-map-marker" style="color:red;font-size:28px"></i> ՄԱԿ-ի գրասենյակ</p>
+                <p style="text-indent:30px;">Պետրոս Ադամյան 14</p>
+                <p style="text-indent:30px;">Երևան 0010, Հայաստան</p>
+                <p style="margin-bottom:10px;"><i class="fa fa-phone" style="color:red;font-size:28px"></i> +374 10 560212</p>
+                <p style="margin-bottom:10px;"><i class="fa fa-envelope" style="color:red;font-size:24px"></i> uno.yerevan@unic.org</p>
+                <p style="margin-bottom:10px;"><i class="fa fa-internet-explorer" style="color:red;font-size:24px"></i> <a href="https://www.un.am/hy/p/un-country-team">https://www.un.am/hy/p/un-country-team</a></p>
+                </b>
+                <b>
+
+                <ul style="margin:0;">
+                    <i style="font-size:24px;color:red;margin:0;position:relative;left:-40px;top:25px;" class="fa fa-briefcase"></i>
+                    <li>Աջակցություն փոքր և միջին բիզնեսին աջակցություն բնապահպանության <br> մշտադիտարկման անցկացման գործում</li>
+                    <li>աղքատության նվազեցման ծրագրեր աջակցություն մարդու իրավունքների <br> պաշտպանության գործում զարգացման ծրագրեր</li>
+                    <li>Սննդի բաշխում սոցիալապես անապահով ընտանիքներին</li>
+                    <li>Երեխայի իրավունքների,  առողջության պաշտպանություն օգնություն հատուկ պաշտպանության կարիք ունեցող երեխաներին կրթություն
+                    </li>
+                </ul>
+                </b>
+            </div>
+            <img src="../images/mak_2.png" alt="">
+            <div id="organizations">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="row1">
+        <div class="col1">
+            <h4>Telephones</h4>
+            <h4>հեռախոսաիին տեղեկատու</h4>
+            <a href="tel:3773">3773</a><br>
+            <a href="tel: +374 71 00 37 73">+374-71-00-37-73</a><br>
+            <h4>ընդհանուր բաժին</h4>
+            <a href="tel:+374 10 12 37 73">+374-10-12-37-73</a><br>
+            <a href="tel:+374 93 00 75 91">+374-93-00-75-91</a><br>
+            <h4>Address: <br><span style="color:dodgerblue;"> Republic of Armenia, Yerevan <br>Mamikonyants 52</span></h4>
+            <a href="http://facebook.com" target="_blank"><img src="../images/facebook.png" width="50" height="50" alt="facebook"></a>
+            <a href="http://twitter.com" target="_blank"><img src="../images/twitter.png" width="50" height="50" alt="twitter"></a>
+            <a href="http://instagram.com" target="_blank"><img src="../images/Instagram.svg.webp" width="50" height="50" alt="instagram"></a><br>
+
+        </div>
+        <div class="col2">
+            <a href="/views/about_1.html.html">About Us</a><br>
+            <a href="/views/send-mail.html">Contact Us</a><br>
+            <a href="/views/categories.html">Categories</a><br>
+            <a href="/views/price_list.html">Price List</a><br>
+            <a href="/views/blog.html">Blog</a><br><br>
+            <a href="/views/hotlines.html">ԹԵԺ ԳԾԵՐ</a><br>
+            <a href="/views/codes.html">ՀՀ մարզերի և միջազգաիին կոդեր</a><br>
+            <a href="/views/mailIndexes.html">Երևանի փոստային դասիչներ</a><br>
+            <a href="/views/oldNewStreets.html">Փողոցների հին ու նոր անվանումներ</a><br>
+            <a target="_blank" href="https://www.google.com/maps/@40.0090187,45.2423152,8z">ՔԱՐՏԵԶ</a><br><br>
+            <a href="/views/footer1.html">Գաղտնիութան քաղաքականութուն</a><br>
+            <a href="/views/footer2.html">Օգտագործման կանոններ</a><br>
+
+        </div>
+    </div>
+    <p>&copy; Samvel Directory 2021</p>
+</div>
+
+</body>
+</html>

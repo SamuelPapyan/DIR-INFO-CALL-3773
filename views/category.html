@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!-- Style -->
+
+    <link rel="stylesheet" href="../css/layout.css" type="text/css">
+    <link rel="stylesheet" href="../css/category.css" type="text/css">
+    <script type="module" src="../js/pages/category.js"></script>
+    <link rel="stylesheet" href="../css/category_beta.css" type="text/css">
+    <title>Category - 1</title>
+    <style>
+        #subcats{
+            font-size:12px;
+            text-transform:uppercase;
+            height:160px;
+            overflow:auto;
+        }
+        #cat-img{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+        #cat-img img{
+            width:160px;
+        }
+        #path{
+            font-size:20px;
+            font-weight:bold;
+            font-family:sans-serif;
+        }
+        .short-info h3{
+            margin:0;
+        }
+        .short-info ul{
+            margin:0;
+        }
+        .img-icon{
+            width:20px;
+            height:20px;
+        }
+        #organizations h3{
+            font-size:16px;
+            text-transform:uppercase;
+            color:red;
+            font-weight:bold;
+        }
+        .contact-row{
+            display:flex;
+            justify-content:space-between;
+            font-weight:bold;
+        }
+        #rowX{
+            display:flex;
+            justify-content: space-between;
+        }
+        input[name="search-query"]{
+            width:400px;
+            border-radius:25px;
+            border-color:blue;
+        }
+        #search{
+            background-color:blue;
+            color:white;
+            border-radius:25px;
+            border-style:none;
+        }
+        #path a{
+            color:blue;
+        }
+
+        #blue-content{
+            background-color:powderblue;
+            border-radius:25px;
+            height:490px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../images/DIR_INFO_CALL_LOGO_V2.PNG" type="image/png" size="16x16">
+</head>
+<body>
+<div id="menu">
+    <div class="col0">
+        <a href="tel: 3773">
+            <img src="../images/call_us_3.png" id="callUs" alt="">
+        </a>
+    </div>
+    <div class="col1">
+        <a href="/views/about_1.html">About Us</a>
+        <a href="/views/send-mail.html">Contact Us</a>
+        <a href="/views/categories.html">Categories</a>
+        <a href="/views/price_list.html">Price List</a>
+        <a href="/views/blog.html" id="blog-link">Blog</a>
+    </div>
+    <div id="logo">
+        <a href="/views">
+            <img src="../images/DIR_INFO_CALL_LOGO_V2.png" alt="">
+        </a>
+    </div>
+    <div class="col2">
+        <a href="#" class="locale" locale-lang="hy_AM">Հայ</a> <!--<img src="https://img5.goodfon.ru/wallpaper/nbig/6/43/armenia-flag-armenian-armenian-flag-flag-of-armenia-republic.jpg" alt="arm_lang">-->
+        <a href="#" class="locale" locale-lang="en_US">Eng</a> <!--<img src="https://tekinfarmed.com/images/en.png" alt="eng_lang">-->
+        <a href="#" class="locale" locale-lang="ru_RU">Рус</a> <!--<img src="https://practicalfunctionalassessment.files.wordpress.com/2020/12/russian-flag-russian-flag-russia-flag-of-russia.jpg" alt="rus_lang">-->
+    </div>
+    <div class="col3">
+        <a id="loginUrl" href="/views/login.html">Login</a>
+        <a href="/views/register.html">Sign Up</a>
+    </div>
+
+</div>
+<div id="container">
+
+    <div id="rowX">
+        <p id="path"><a href="/views/categories.html"><img src="../images/category_minilogo.jpg" alt=""></a> &raquo; </p>
+        <div id="search-box">
+            <input type="text" name="search-query">
+            <button id="search">Search <i class="fa fa-search"></i></button>
+        </div>
+
+    </div>
+    <div id="heading-box">
+        <h1 id="heading"></h1>
+        <p><b>Կազմակերպություններ: <span id="counter"></span></b></p>
+    </div>
+
+    <div id="content">
+        <div class="col1">
+            <ul id="blue-content">
+                <div id="subcats">
+
+                </div>
+                <div id="price-info">
+                    <img src="../images/org_for_money_2.png" alt="">
+                    <div class="price-col-2" style="display:flex;flex-direction: column; justify-content:space-between;">
+                        <p style="text-transform:uppercase; margin-left:60px; font-size:2em;"><b>Full Info</b></p>
+                        <p>Ամբողջական տեղեկություն</p>
+                    </div>
+                </div>
+                <div class="short-info">
+                    <img src="../images/infobox2_5.png" alt="" style="width:100%;margin:0;">
+                </div>
+            </ul>
+        </div>
+        <div class="col2">
+            <div id="organizations">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="row1">
+        <div class="col1">
+            <h4>Telephones</h4>
+            <h4>հեռախոսաիին տեղեկատու</h4>
+            <a href="tel:3773">3773</a><br>
+            <a href="tel: +374 71 00 37 73">+374-71-00-37-73</a><br>
+            <h4>ընդհանուր բաժին</h4>
+            <a href="tel:+374 10 12 37 73">+374-10-12-37-73</a><br>
+            <a href="tel:+374 93 00 75 91">+374-93-00-75-91</a><br>
+            <h4>Address: <br><span style="color:dodgerblue;"> Republic of Armenia, Yerevan <br>Mamikonyants 52</span></h4>
+            <a href="http://facebook.com" target="_blank"><img src="../images/facebook.png" width="50" height="50" alt="facebook"></a>
+            <a href="http://twitter.com" target="_blank"><img src="../images/twitter.png" width="50" height="50" alt="twitter"></a>
+            <a href="http://instagram.com" target="_blank"><img src="../images/Instagram.svg.webp" width="50" height="50" alt="instagram"></a><br>
+
+        </div>
+        <div class="col2">
+            <a href="/views/about_1.html.html">About Us</a><br>
+            <a href="/views/send-mail.html">Contact Us</a><br>
+            <a href="/views/categories.html">Categories</a><br>
+            <a href="/views/price_list.html">Price List</a><br>
+            <a href="/views/blog.html">Blog</a><br><br>
+            <a href="/views/hotlines.html">ԹԵԺ ԳԾԵՐ</a><br>
+            <a href="/views/codes.html">ՀՀ մարզերի և միջազգաիին կոդեր</a><br>
+            <a href="/views/mailIndexes.html">Երևանի փոստային դասիչներ</a><br>
+            <a href="/views/oldNewStreets.html">Փողոցների հին ու նոր անվանումներ</a><br>
+            <a target="_blank" href="https://www.google.com/maps/@40.0090187,45.2423152,8z">ՔԱՐՏԵԶ</a><br><br>
+            <a href="/views/footer1.html">Գաղտնիութան քաղաքականութուն</a><br>
+            <a href="/views/footer2.html">Օգտագործման կանոններ</a><br>
+
+        </div>
+    </div>
+    <p>&copy; Samvel Directory 2021</p>
+</div>
+</body>
+</html>

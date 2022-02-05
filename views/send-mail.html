@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../css/contact_us.css">
+    <link rel="stylesheet" href="../css/layout.css" type="text/css">
+    <script type="module" src="../js/session/registerPanel.js"></script>
+    <script type="module" src="../js/pages/send-mail.js"></script>
+    <title>Contact Us</title>
+    <link rel="icon" href="../images/DIR_INFO_CALL_LOGO_V2.PNG" type="image/png" size="16x16">
+</head>
+<body>
+<div id="menu">
+    <div class="col0">
+        <a href="tel: 3773">
+            <img src="../images/call_us_3.png" id="callUs" alt="">
+        </a>
+    </div>
+    <div class="col1">
+        <a href="/views/about_1.html">About Us</a>
+        <a href="/views/send-mail.html">Contact Us</a>
+        <a href="/views/categories.html">Categories</a>
+        <a href="/views/price_list.html">Price List</a>
+        <a href="/views/blog.html" id="blog-link">Blog</a>
+    </div>
+    <div id="logo">
+        <a href="/views">
+            <img src="../images/DIR_INFO_CALL_LOGO_V2.png" alt="">
+        </a>
+    </div>
+    <div class="col2">
+        <a href="#" class="locale" locale-lang="hy_AM">Հայ</a> <!--<img src="https://img5.goodfon.ru/wallpaper/nbig/6/43/armenia-flag-armenian-armenian-flag-flag-of-armenia-republic.jpg" alt="arm_lang">-->
+        <a href="#" class="locale" locale-lang="en_US">Eng</a> <!--<img src="https://tekinfarmed.com/images/en.png" alt="eng_lang">-->
+        <a href="#" class="locale" locale-lang="ru_RU">Рус</a> <!--<img src="https://practicalfunctionalassessment.files.wordpress.com/2020/12/russian-flag-russian-flag-russia-flag-of-russia.jpg" alt="rus_lang">-->
+    </div>
+    <div class="col3">
+        <a id="loginUrl" href="/views/login.html">Login</a>
+        <a href="/views/register.html">Sign Up</a>
+    </div>
+
+</div>
+<div class="content">
+
+    <div class="container">
+        <div id="image-box">
+            <img src="../images/contact_us_img.png">
+        </div>
+        <div class="row align-items-stretch  contact-wrap">
+            <div class="col-md-7" id="left-box">
+                <div class="form h-100">
+                    <h3>Send us a message</h3>
+                    <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-4">
+                                <label class="col-form-label">Name *</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
+                            </div>
+                            <div class="col-md-6 form-group mb-4">
+                                <label class="col-form-label">Email *</label>
+                                <input type="text" class="form-control" name="email" id="email"  placeholder="Your email">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-4">
+                                <label class="col-form-label">Phone</label>
+                                <input type="text" class="form-control" name="phone" id="phone"  placeholder="Phone #">
+                            </div>
+                            <div class="col-md-6 form-group mb-4">
+                                <label class="col-form-label">Company</label>
+                                <input type="text" class="form-control" name="company" id="company"  placeholder="Company  name">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 form-group mb-4" id="defix">
+                                <label for="message" class="col-form-label">Message *</label>
+                                <textarea class="form-control" name="content" id="message" cols="30" rows="4"  placeholder="Write your message"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <button class="btn btn-primary py-2 px-4" id="send">Send Message</button>
+                                <span class="submitting"></span>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div id="form-message-warning mt-4"></div>
+
+                </div>
+            </div>
+            <div id="right-box">
+                <div class="contact-info h-100">
+                    <h3>Contact Information</h3>
+                    <ul class="list-unstyled">
+                        <li id="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d761.7413040450225!2d44.513639554349396!3d40.209836684346755!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abd4badf538f9%3A0x6a4aef9572fe3521!2zNTIgTWFtaWtvbmlhbnRjIHBva2hvYywgWWVyZXZhbiAwMDUxLCDQkNGA0LzQtdC90LjRjw!5e0!3m2!1sru!2s!4v1620759139810!5m2!1sru!2s" width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled" id="address-book">
+                        <li class="d-flex">
+                            <span class="wrap-icon icon-room mr-3"></span>
+                            <span class="text">RA, Yerevan, Mamikonyants 52</span>
+                        </li>
+                        <li class="d-flex">
+                            <span class="wrap-icon icon-phone mr-3"></span>
+                            <span class="text">+374 91 007591</span>
+                        </li>
+                        <li class="d-flex">
+                            <span class="wrap-icon icon-envelope mr-3"></span>
+                            <span class="text">samuel.papyan170@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="footer">
+    <div class="row1">
+        <div class="col1">
+            <h4>Telephones</h4>
+            <h4>հեռախոսաիին տեղեկատու</h4>
+            <a href="tel:3773">3773</a><br>
+            <a href="tel: +374 71 00 37 73">+374-71-00-37-73</a><br>
+            <h4>ընդհանուր բաժին</h4>
+            <a href="tel:+374 10 12 37 73">+374-10-12-37-73</a><br>
+            <a href="tel:+374 93 00 75 91">+374-93-00-75-91</a><br>
+            <h4>Address: <br><span style="color:dodgerblue;"> Republic of Armenia, Yerevan <br>Mamikonyants 52</span></h4>
+            <a href="http://facebook.com" target="_blank"><img src="../images/facebook.png" width="50" height="50" alt="facebook"></a>
+            <a href="http://twitter.com" target="_blank"><img src="../images/twitter.png" width="50" height="50" alt="twitter"></a>
+            <a href="http://instagram.com" target="_blank"><img src="../images/Instagram.svg.webp" width="50" height="50" alt="instagram"></a><br>
+
+        </div>
+        <div class="col2">
+            <a href="/views/about_1.html.html">About Us</a><br>
+            <a href="/views/send-mail.html">Contact Us</a><br>
+            <a href="/views/categories.html">Categories</a><br>
+            <a href="/views/price_list.html">Price List</a><br>
+            <a href="/views/blog.html">Blog</a><br><br>
+            <a href="/views/hotlines.html">ԹԵԺ ԳԾԵՐ</a><br>
+            <a href="/views/codes.html">ՀՀ մարզերի և միջազգաիին կոդեր</a><br>
+            <a href="/views/mailIndexes.html">Երևանի փոստային դասիչներ</a><br>
+            <a href="/views/oldNewStreets.html">Փողոցների հին ու նոր անվանումներ</a><br>
+            <a target="_blank" href="https://www.google.com/maps/@40.0090187,45.2423152,8z">ՔԱՐՏԵԶ</a><br><br>
+            <a href="/views/footer1.html">Գաղտնիութան քաղաքականութուն</a><br>
+            <a href="/views/footer2.html">Օգտագործման կանոններ</a><br>
+
+        </div>
+    </div>
+    <p>&copy; Samvel Directory 2021</p>
+</div>
+
+</body>
+</html>

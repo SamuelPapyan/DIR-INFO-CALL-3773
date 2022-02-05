@@ -1,0 +1,58 @@
+#container{
+    margin:auto;
+    margin-top:60px;
+    margin-bottom:60px;
+    width:1300px;
+}
+
+#container a{
+    color:blue;
+    text-decoration: none;
+}
+#container ul li{
+    font-size:20px;
+    font-weight:bold;
+}
+#container ul{
+    list-style:none;
+    display:inline-block;
+}
+
+#content{
+    display:flex;
+    justify-content:space-between;
+}
+
+#container h1{
+    font-weight:bold;
+}
+#content .col1{
+    width:29%;
+}
+#content .col2{
+    width:67%;
+}
+
+#content .col1 img{
+    width:100%;
+    margin-top:70px;
+}
+
+#content .col2 h1{
+    text-align:center;
+    color:red;
+}
+
+.raquo{
+    color:red;
+    font-weight:bold;
+    font-size:1em;
+}
+#container ul li::before {
+    content: "\2022";
+    color: red;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}

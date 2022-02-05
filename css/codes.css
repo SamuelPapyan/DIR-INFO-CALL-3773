@@ -1,0 +1,59 @@
+#container{
+    margin-top:80px;
+    margin-left:700px;
+    width:600px;
+    padding:10px;
+    background-color: rgba(255,255,255,0.6);
+    margin-bottom:300px;
+}
+#table-box{
+    height:200px;
+    width:400px;
+    margin:auto;
+    overflow: auto;
+}
+body{
+    background-image:url('../images/world_phone_2.png');
+    background-repeat:no-repeat;
+    background-size:45%;
+    background-position-y: 50px;
+}
+#container table, #input-form{
+    margin:auto;
+}
+#container table th{
+    background-color:dodgerblue;
+    text-align:center;
+    color:white;
+}
+#container table td{
+    text-align:center;
+}
+.code{
+    width:100px;
+}
+.location{
+    width:300px;
+}
+#input-form{
+    text-align:center;
+    margin-bottom:15px;
+}
+#input-form label{
+    color:#3f48cc;
+    font-weight: bold;
+    font-size:24px;
+}
+#input-form input{
+    width:350px;
+    border-radius:25px;
+    border-color:blue;
+    padding:3px;
+}
+#input-form button{
+    background-color:blue;
+    color:white;
+    font-weight:bold;
+    border-style:none;
+    border-radius:25px;
+}

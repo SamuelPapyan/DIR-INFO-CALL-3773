@@ -1,0 +1,384 @@
+body{
+    font-family:sans-serif;
+}
+input[name="search"]{
+    width:300px;
+}
+body{
+    background-image:url('https://cdn.pixabay.com/photo/2019/06/02/15/45/call-centre-4246688_960_720.jpg');
+    background-size:100% 650px;
+    background-repeat:no-repeat;
+}
+#container{
+    margin:auto;
+    width:1200px;
+    margin-bottom:60px;
+}
+#container .row2 .col1, #container .row2 .col2, #container .row2 .col3{
+    display: inline-block;
+    padding:10px;
+    width: 400px;
+}
+#dropdown{
+    position:relative;
+    display: inline-block;
+}
+#menubar a {
+    background-color:blue;
+    text-decoration: none;
+    color:white;
+    padding:10px;
+    border-radius:25px;
+    font-size:16px;
+	display:inline-block;
+}
+#categories{
+    display:none;
+    position:absolute;
+    background-color:dodgerblue;
+    top:30px;
+    left:0;
+    list-style-type: none;
+    z-index: 1;
+}
+
+#categories a{
+    background-color:transparent;
+    color:blue;
+    font-size:16px;
+    padding:5px;
+    border-radius:0;
+}
+
+#categories a:hover{
+    background-color:blue;
+    color:dodgerblue;
+}
+
+#dropdown:hover #categories{
+    display:inline;
+}
+
+#container .row2 .col3{
+    width: 200px;
+}
+
+#container .row2 .col2{
+    width: 700px;
+}
+#container .row2 .col1{
+    width: 250px;
+}
+#container .row1 .col2{
+	width:260px;
+	text-align:right;
+	padding:10px;
+}
+
+#container .row1 .col3 ul {
+    display: flex;
+    margin: 0;
+}
+
+#container .row1 .col3 ul li{
+    display:flex;
+	list-style-type:none;
+    width:60px;
+    font-weight:bold;
+	font-size:20px;
+}
+#container .row1 .col3 ul li a{
+	text-decoration:none;
+	color:blue;
+}
+
+#container .row1 .col3 ul li{
+    text-decoration:none;
+    color:blue;
+}
+#container .row1 .col3 ul li img{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+}
+
+#container .row1 .col2 a{
+	background-color:blue;
+    text-decoration: none;
+    color:white;
+    padding:5px;
+    border-radius:25px;
+    font-size:16px;
+	display:inline-block;
+	margin-bottom:10px;
+}
+
+#container .row1 .col3{
+    width: 100px;
+    display: inline-block;
+    padding:10px;
+}
+#container .row1 .col1{
+    width: 600px;
+    padding:10px;
+}
+#container .row1, #container .row2{
+    display:flex;
+    justify-content: space-between;
+}
+#container .row2 .col1, #container .row2 .col2, #container .row2 .col3{
+    margin-bottom:0;
+}
+#toogle{
+    width:100%;
+    height:50px;
+}
+#callUs{
+    width:220px;
+    height:80px;
+    margin-left:20px;
+}
+#toogle:hover, #callUs:hover{
+    cursor:pointer;
+}
+
+#search-box{
+    position:relative;
+    top:-55px;
+    left:-50px;
+    text-align:center;
+}
+
+#search-box input[name="search"]{
+    margin-bottom:5px;
+    width:500px;
+    height:20px;
+    margin-left:230px;
+}
+
+#searchBtn{
+    height:35px;
+    width:120px;
+    font-size:20px;
+    background-color:blue;
+    color:white;
+    border-radius:25px;
+    border-style:none;
+}
+
+#container .row2 .col3 img{
+    float:right;
+    margin-bottom:10px;
+}
+#hot-lines{
+    background-color:lightgoldenrodyellow;
+    color:#ff0000;
+    border-radius:25px;
+}
+#mapLink{
+    width:80%;
+    height:80px;
+}
+#container input[name="search"]{
+    border-radius:25px;
+    height:35px;
+    border-color:blue;
+}
+
+#main{
+    width:1335px;
+}
+
+#footer{
+    width:98.5%;
+}
+
+#footer h4{
+    margin:4px;
+}
+#footer a{
+    text-decoration:none;
+}
+#logo img{
+    width:110px;
+    margin-left:30px;
+}
+
+#logo h1{
+    margin:0;
+    font-size:24px;
+    text-align:center;
+}
+
+#logo{
+    width:180px;
+    position:relative;
+    top:140px;
+    left:260px;
+}
+
+#showcase{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:1000px;
+    background-color:white;
+    justify-content:space-around;
+    background-image:url('../images/background_2.jpg');
+    background-repeat:no-repeat;
+    background-size:100% 700px;
+
+}
+.showRow{
+    margin:auto;
+    width:80%;
+    padding-top:50px;
+}
+#showcase img{
+    width:500px;
+    height:550px;
+    float:left;
+    display:inline-block;
+    margin-right: 20px;
+}
+
+#showcase .myUl{
+    height:550px;
+    list-style-type:none;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:0;
+}
+#showcase .myUl h2{
+    margin:0;
+    font-size:4.5em;
+    text-transform: uppercase;
+    color:white;
+}
+.row5{
+    display:flex;
+    justify-content: space-between;
+}
+.row5 h2{
+    display:inline-block;
+    text-align:center;
+    width:300px;
+}
+
+#showcase p{
+    color:white;
+    text-align:center;
+    font-weight:bold;
+}
+
+#container .row1 .col3{
+    width:150px;
+}
+
+#blog{
+    border-radius:25px;
+    background-color:blue;
+    color:white;
+    height:20px;
+    padding:10px;
+    text-decoration:none;
+}
+
+#container .row1 .col2 span{
+    color:blue;
+    font-weight:bold;
+    margin-right:10px;
+    font-size:20px;
+}
+
+#footer{
+    margin-top:70px;
+    position:relative;
+    left:-10px;
+    width:99.7%;
+}
+
+#container .row5{
+    width:100%;
+    margin:auto;
+    display:flex;
+    height:100px;
+    position:relative;
+    justify-content: space-between;
+    top:-45px;
+}
+
+#container .row5 .org{
+    width:100%;
+    height:100%;
+    background-position: center;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+}
+
+.org1{
+    background-image:url("../images/alphapharm_2.jpg");
+}
+.org2{
+    background-image:url("../images/ameriabank_2.jpg");
+}
+.org3{
+    background-image:url("../images/astxik_2.jpg");
+}
+.org4{
+    background-image:url("../images/zigzag.jpg");
+}
+.org5{
+    background-image:url("../images/tashir_pizza.jpg");
+}
+.org6{
+    background-image:url("../images/mic_armenia.jpg");
+}
+.org7{
+    background-image:url("../images/rio_mall_2.jpg");
+}
+
+#container .row5 a{
+    width:13%;
+}
+
+#container .row2 .col3{
+    position:relative;
+    top:-120px;
+    left:50px;
+}
+
+#container .row5 .org:hover {
+    border:2px solid blue;
+}
+
+#hotline-image-1{
+    width:200px;
+}
+
+.triggered-link:hover{
+    border:2px solid blue;
+}
+
+#oldNewStreets{
+    width:150px;
+    height:30px;
+    border-radius:25px;
+    margin-top:5px;
+    margin-left:25px;
+}
+#oldNewStreets:hover{
+    border:2px solid blue;
+}
+
+#world-phones{
+    width:140px;
+    position:absolute;
+    left:-180px;
+    top:310px;
+}
+#world-phones img{
+    width:100%;
+}

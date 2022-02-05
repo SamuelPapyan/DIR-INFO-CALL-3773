@@ -1,0 +1,108 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geolocation</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    <style>
+        #mapid { width:700px;height: 700px; }
+    </style>
+    <script type="module" src="../js/pages/map.js">
+    </script>
+</head>
+<body>
+<div id="mapid"></div>
+<script>
+    var mymap = L.map('mapid').setView([40.181676, 44.514919], 15);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1Ijoic2FtdmVscGFweWFuIiwiYSI6ImNrb2g4YzN2MzBuMTEycWxjN3FrMm1nYTEifQ.ePYp0wihaee1nZh5vav4yQ'
+    }).addTo(mymap);
+
+    var osm=new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+</script>
+</body>
+</html>
+-->
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 90%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        var geocoder;
+        var map;
+        function initialize() {
+            geocoder = new google.maps.Geocoder();
+            var latlng = new google.maps.LatLng(-34.397, 150.644);
+            var mapOptions = {
+                zoom: 8,
+                center: latlng
+            }
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        }
+
+        function codeAddress() {
+            var address = document.getElementById('address').value;
+            geocoder.geocode( { 'address': address}, function(results, status) {
+                if (status == 'OK') {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        }
+    </script>
+</head>
+<body onload="initialize()">
+<div id="map" style="width: 320px; height: 480px;"></div>
+<div>
+    <input id="address" type="textbox" value="Sydney, NSW">
+    <input type="button" value="Encode" onclick="codeAddress()">
+</div>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCe5tTpmQlQHdbktGEPbrQhpTO_3NgfbYI&callback=initMap&libraries=&v=weekly"
+        async
+></script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<iframe src="https://www.google.com/maps/@40.2184672,44.537686,16z" width="500" height="500" frameborder="0"></iframe>
+</body>
+</html>

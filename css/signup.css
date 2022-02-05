@@ -1,0 +1,48 @@
+#container{
+    margin-top:50px;
+    margin-left:700px;
+    width:600px;
+    padding:10px;
+    background-color: rgba(255,255,255,0.6);
+}
+body{
+    background-image:url('../images/sign_up.png');
+    background-repeat:no-repeat;
+    background-size:45%;
+    background-position-y: 270px;
+}
+#login-form h2{
+    text-align:center;
+    color:blue;
+    letter-spacing: 5px;
+}
+#login-form{
+    padding:10px;
+    width:530px;
+}
+#login-form input[type="text"], input[type="password"]{
+    width:500px;
+    height:30px;
+    border-color:blue;
+    border-radius:25px;
+    margin-bottom:10px;
+}
+#login-form label{
+    color:blue;
+    font-weight:bold;
+}
+#login-form button{
+    background-color:blue;
+    color:white;
+    margin-top:10px;
+    border-style:none;
+    border-radius:25px;
+    margin-bottom:15px;
+    font-size:20px;
+    text-align:center;
+    width:500px;
+    height:30px;
+}
+#footer{
+    margin-top:80px;
+}

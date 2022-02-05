@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!-- Style -->
+
+    <link rel="stylesheet" href="../css/layout.css" type="text/css">
+    <link rel="stylesheet" href="../css/organization-single-2.css" type="text/css">
+    <script type="module" src="../js/session/registerPanel.js"></script>
+    <script type="module" src="../js/pages/organization-single-2.js"></script>
+    <style>
+        textarea[name='comment']{
+            min-width:500px;
+            min-height:100px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../images/DIR_INFO_CALL_LOGO_V2.PNG" type="image/png" size="16x16">
+</head>
+<body>
+<div id="menu">
+    <div class="col0">
+        <a href="tel: 3773">
+            <img src="../images/call_us_3.png" id="callUs" alt="">
+        </a>
+    </div>
+    <div class="col1">
+        <a href="/views/about_1.html">About Us</a>
+        <a href="/views/send-mail.html">Contact Us</a>
+        <a href="/views/categories.html">Categories</a>
+        <a href="/views/price_list.html">Price List</a>
+        <a href="/views/blog.html" id="blog-link">Blog</a>
+    </div>
+    <div id="logo">
+        <a href="/views">
+            <img src="../images/DIR_INFO_CALL_LOGO_V2.png" alt="">
+        </a>
+    </div>
+    <div class="col2">
+        <a href="#" class="locale" locale-lang="hy_AM">Հայ</a> <!--<img src="https://img5.goodfon.ru/wallpaper/nbig/6/43/armenia-flag-armenian-armenian-flag-flag-of-armenia-republic.jpg" alt="arm_lang">-->
+        <a href="#" class="locale" locale-lang="en_US">Eng</a> <!--<img src="https://tekinfarmed.com/images/en.png" alt="eng_lang">-->
+        <a href="#" class="locale" locale-lang="ru_RU">Рус</a> <!--<img src="https://practicalfunctionalassessment.files.wordpress.com/2020/12/russian-flag-russian-flag-russia-flag-of-russia.jpg" alt="rus_lang">-->
+    </div>
+    <div class="col3">
+        <a id="loginUrl" href="/views/login.html">Login</a>
+        <a href="/views/register.html">Sign Up</a>
+    </div>
+
+</div>
+<div id="container">
+    <div id="rowX">
+        <p id="path"><a href="/views/categories.html"><img src="../images/category_minilogo.jpg" alt=""></a> &raquo; <a href="/views/category.html" id="category"></a> &raquo; <span id="subcategory"></span></p>
+        <div id="search-box">
+            <input type="text" name="search-query">
+            <button id="search">Search <i class="fa fa-search"></i></button>
+        </div>
+    </div>
+    <div id="content">
+        <div class="col1">
+            <div class="img-container">
+                <img id="orgLogo" src="../images/your_logo_2.jpg">
+            </div>
+            <div id="short-info">
+                <p>Հիմնադրման տարեթիվ՝ <b><span id="foundationYear"></span></b></p>
+                <p><i class="fa fa-users" style="font-size:24px;color:red;margin-right:10px;"> </i><b><span id="employees"></span></b></p>
+                <div id="timeColide">
+                    <p><b>Աշխատանքային օրեր`</b></p>
+                    <div style="display:flex;">
+                        <p id="working-days"></p>
+                        <p id="working-time"></p>
+                    </div>
+                    <div id="rest-days-box">
+                        <p><b>Հանգստյան օրեր`</b></p>
+                        <p id="rest-days"></p>
+                    </div>
+                </div>
+                <p>Տեղեկությունների թարմացում՝ <span id="data-update"></span></p>
+            </div>
+            <div id="short-info-2">
+                <img src="../images/infobox2_5.png" alt="" style="width:100%;margin:0;">
+            </div>
+        </div>
+        <div class="col2">
+            <div id="row0">
+                <h1 id="organizationName"></h1>
+                <p id="openClose"></p>
+            </div>
+            <div id="row">
+                <div class="subcol1">
+                    <p><i class="fa fa-briefcase" style="color:red;font-size:24px;margin-right:20px;"></i> <span id="description"></span></p>
+                    <p><img src="../images/men-in-realred.png" alt="" width="24" style="margin-right:20px;"> <b><span id="director"></span></b></p>
+                    <div style="display:flex;" id="phone-book">
+                        <h3><i class="fa fa-phone" style="color:red; margin-right:17px;"></i></h3>
+                        <ul id="phones">
+
+                        </ul>
+                    </div>
+                    <h3><i class="fa fa-print" style="color:red; margin-right:17px;"></i> <span id="fax"></span></h3>
+                    <div style="display:flex">
+                        <h3><i class="fa fa-briefcase" style="color:red; margin-right:17px;"></i></h3>
+                        <div id="activities">
+                            <b><i><p>
+                                Ձեր կազմակերպության գործունեության մասին ավելին...
+                            </p></i></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="subcol2">
+                    <div id="mapLocation">
+                        <div width="100%" height="100%" style="background-image:url('../images/map_4.PNG');background-size:100% 100%;">
+                            <img style="margin-left: 30px;" src="../images/infobox_8.png" alt="">
+                            <b><i><a href="/views/price_list.html" style="color:dodgerblue;margin-left:83px;">գրանցման պայմաններին</a></i></b>
+                        </div>
+                    </div>
+                    <div id="contact-info">
+                        <div>
+                            <h3 style="margin-left:10px;"><i class="fa fa-map-marker" style="color:red;font-size:36px;margin-right:25px;"></i> <span id="address"></span></h3>
+                            <h3 style="margin-left:10px;"><i class="fa fa-envelope" style="color:red;font-size:28px;margin-right:25px;"></i><span id="email"></span></h3>
+                            <h3 style="margin-left:10px;"><i class="fa fa-internet-explorer" style="color:red;margin-right:20px;"></i> <a id="website"></a></h3>
+                            <h3 style="margin-left:10px;"><img src="../images/DIR_INFO_CALL_LOGO_V2.PNG" style="width:40px;height:40px;margin-right:15px;"><a id="shortLink"></a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 id="gallery-text">VIDEO <img src="../images/DIR_INFO_CALL_LOGO_V2.PNG" alt="">
+                PHOTO <img src="../images/DIR_INFO_CALL_LOGO_V2.PNG" alt="">
+                VIDEO <img src="../images/DIR_INFO_CALL_LOGO_V2.PNG" alt="">
+                PHOTO <img src="../images/DIR_INFO_CALL_LOGO_V2.PNG" alt="">
+                VIDEO <img src="../images/DIR_INFO_CALL_LOGO_V2.PNG" alt="">
+                PHOTO</h2>
+        </div>
+    </div>
+    <!--
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Vt_B09o349Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    -->
+    <!--
+    <textarea name="comment" placeholder="Leave a comment">
+
+    </textarea>
+    <button id="comment-leave">Leave a Comment</button><br>
+    <div id="comments">
+
+    </div>
+    -->
+</div>
+<div id="footer">
+    <div class="row1">
+        <div class="col1">
+            <h4>Telephones</h4>
+            <h4>հեռախոսաիին տեղեկատու</h4>
+            <a href="tel:3773">3773</a><br>
+            <a href="tel: +374 71 00 37 73">+374-71-00-37-73</a><br>
+            <h4>ընդհանուր բաժին</h4>
+            <a href="tel:+374 10 12 37 73">+374-10-12-37-73</a><br>
+            <a href="tel:+374 93 00 75 91">+374-93-00-75-91</a><br>
+            <h4>Address: <br><span style="color:dodgerblue;"> Republic of Armenia, Yerevan <br>Mamikonyants 52</span></h4>
+            <a href="http://facebook.com" target="_blank"><img src="../images/facebook.png" width="50" height="50" alt="facebook"></a>
+            <a href="http://twitter.com" target="_blank"><img src="../images/twitter.png" width="50" height="50" alt="twitter"></a>
+            <a href="http://instagram.com" target="_blank"><img src="../images/Instagram.svg.webp" width="50" height="50" alt="instagram"></a><br>
+
+        </div>
+        <div class="col2">
+            <a href="/views/about_1.html.html">About Us</a><br>
+            <a href="/views/send-mail.html">Contact Us</a><br>
+            <a href="/views/categories.html">Categories</a><br>
+            <a href="/views/price_list.html">Price List</a><br>
+            <a href="/views/blog.html">Blog</a><br><br>
+            <a href="/views/hotlines.html">ԹԵԺ ԳԾԵՐ</a><br>
+            <a href="/views/codes.html">ՀՀ մարզերի և միջազգաիին կոդեր</a><br>
+            <a href="/views/mailIndexes.html">Երևանի փոստային դասիչներ</a><br>
+            <a href="/views/oldNewStreets.html">Փողոցների հին ու նոր անվանումներ</a><br>
+            <a target="_blank" href="https://www.google.com/maps/@40.0090187,45.2423152,8z">ՔԱՐՏԵԶ</a><br><br>
+            <a href="/views/footer1.html">Գաղտնիութան քաղաքականութուն</a><br>
+            <a href="/views/footer2.html">Օգտագործման կանոններ</a><br>
+
+        </div>
+    </div>
+    <p>&copy; Samvel Directory 2021</p>
+</div>
+</body>
+</html>

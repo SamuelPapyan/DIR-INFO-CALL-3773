@@ -1,0 +1,251 @@
+#container{
+    width:1300px;
+    margin:auto;
+    margin-top:25px;
+    margin-bottom:50px;
+}
+#content{
+    display:flex;
+    justify-content: space-between;
+}
+#content .col1, #content .col2{
+
+}
+#content .col1{
+    background-color:powderblue;
+    border-radius:25px;
+    width:34%;
+    padding:10px;
+}
+#content .col2{
+    padding:10px;
+    padding-bottom:0;
+}
+#content .col2{
+    width:66%;
+}
+#orgLogo{
+    background-color: white;
+    width:60%;
+    margin:0;
+}
+.img-container{
+    text-align:center;
+    display:block;
+}
+#description{
+    font-weight:bold;
+    font-size:16px;
+}
+#working-days, #rest-days{
+    list-style-type: none;
+    font-weight: bold;
+}
+#organizationName{
+    font-size:20px;
+    font-weight:bold;
+    color:dodgerblue;
+    margin:0;
+    width:80%;
+}
+#row{
+    display:flex;
+    justify-content: space-between;
+}
+#row .subcol1, #row .subcol2{
+    padding:10px;
+}
+#row .subcol1{
+    width:50%;
+}
+#row .subcol2{
+    width:49%;
+}
+#mapLocation, #activities{
+    width:100%;
+    height:250px;
+    margin-top:10px;
+}
+#mapLocation{
+    margin:0;
+    margin-bottom:5px;
+}
+#working-time{
+    font-weight: bold;
+    margin:5px;
+}
+#activities{
+    background-color: #dde9eb;
+    min-height:120px;
+    max-height:170px;
+}
+#phones{
+    padding-left:10px;
+    list-style-type:none;
+    font-weight:bold;
+    font-size:18px;
+}
+#openClose{
+    text-align:right;
+    font-size:30px;
+    font-weight:bold;
+    color:red;
+    margin:0;
+}
+#address, #website{
+    font-size:20px;
+}
+#website{
+    color:dodgerblue;
+}
+#short-info p{
+    margin:3px;
+}
+#short-info #working-time{
+    margin:0;
+}
+#short-info-2 h3{
+    text-align:center;
+    color:red;
+    font-size:24px;
+    font-weight:bold;
+}
+#short-info-2 ul{
+    list-style-type:none;
+    font-weight:bold;
+    margin:0;
+    padding:0;
+    padding-left:20px;
+    padding-right:20px;
+}
+#row0{
+    display: flex;
+    justify-content:space-between;
+}
+#working-days, #working-time{
+    margin:0;
+}
+#path img{
+    width:100px;
+}
+#rowX{
+    display:flex;
+    justify-content: space-between;
+}
+input[name="search-query"]{
+    width:500px;
+    border-radius:25px;
+    border-color:blue;
+}
+#search{
+    background-color:blue;
+    color:white;
+    border-radius:25px;
+    border-style:none;
+}
+#path a{
+    color:blue;
+}
+#short-info-2{
+    font-style:italic;
+    margin-top:20px;
+}
+#content .col1{
+    height:500px;
+}
+#short-info-2 ul li{
+    text-align:center;
+    font-size:18px;
+}
+#socialLink{
+    font-size:40px;
+}
+#foundationYear{
+    font-weight:bold;
+    font-size:24px;
+}
+#row .subcol1{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+#row .subcol1 p{
+    margin:0;
+}
+#activities{
+    padding:10px;
+    font-size:16px;
+    overflow:auto;
+    font-weight:bold;
+}
+
+#gallery{
+    width:80%;
+    margin:auto;
+    margin-top:20px;
+}
+#gallery .row{
+    height:250px;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+#gallery .row img{
+    width:32%;
+    height:100%;
+}
+#video{
+    width:32%;
+    height:100%;
+}
+#contact-info{
+    display:flex;
+    justify-content: space-between;
+}
+#contact info div, #contact #socialLink{
+    border:2px solid blue;
+}
+#socialLink{
+    margin-left:20px;
+    display:flex;
+    flex-direction: column;
+}
+
+#gallery-text{
+    text-align:center;
+    color:blue;
+    font-weight:bold;
+}
+#gallery-text img{
+    width:30px;
+    height:30px;
+}
+#shortLink{
+    font-size:18px;
+    color:dodgerblue;
+}
+#fax{
+    font-weight:bold;
+    font-size:18px;
+}
+#email{
+    font-weight:bold;
+    font-size:16px;
+}
+#activities p{
+    font-size:24px;
+    color:red;
+    text-align:center;
+}
+.subcol1{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+#subcategory{
+    color:blue;
+    cursor:pointer;
+}
+#subcategory:hover{
+    text-decoration:underline;
+}

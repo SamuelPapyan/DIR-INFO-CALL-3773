@@ -1,0 +1,123 @@
+#menu a{
+    background-color:blue;
+    text-decoration: none;
+    color:white;
+    padding:5px;
+    font-size:16px;
+    display:inline-block;
+    border-radius:25px;
+}
+#menu .col0{
+    margin-right:30px;
+}
+#logo img{
+    width:65px;
+}
+#logo{
+    margin-right:90px;
+    position:relative;
+    top:-15px;
+}
+#menu .col1{
+    margin-right:100px;
+}
+#menu .col2{
+    margin-right:30px;
+}
+#menu{
+    display:flex;
+    width:100%;
+    padding:20px 50px;
+    background-color:dodgerblue;
+    position:relative;
+    height:80px;
+    top:0;
+}
+#dropdown{
+    position:relative;
+    display: inline-block;
+}
+
+#categories{
+    display:none;
+    position:absolute;
+    background-color:dodgerblue;
+    top:30px;
+    left:0;
+    list-style-type: none;
+    z-index: 1;
+}
+#categories a{
+    background-color:transparent;
+    color:blue;
+    font-size:16px;
+    padding:5px;
+    border-radius:0;
+}
+
+#categories a:hover{
+    background-color:blue;
+    color:dodgerblue;
+}
+
+#dropdown:hover #categories{
+    display:inline;
+}
+#menu .col3 img{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+}
+#callUs {
+    width:220px;
+    height:80px;
+    cursor:pointer;
+}
+
+#footer{
+    width:100%;
+    padding:10px;
+    background-image:url("../images/footer_1.jpg");
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+}
+
+#footer a{
+    color:dodgerblue;
+}
+#footer a:hover{
+    text-decoration: underline;
+}
+#footer h4{
+    font-size:16px;
+    color:white;
+}
+
+#footer .row1{
+    display:flex;
+}
+
+#footer .col1, #footer .col2{
+    display:inline-block;
+    height:100%;
+    margin-right:30px;
+    padding:10px;
+}
+
+#footer p{
+    font-weight:bold;
+    color:white;
+    text-align:right;
+}
+
+#logo a, #menu .col0 a{
+    background-color:transparent;
+    padding:0;
+}
+
+#menu .col3 span{
+    color:white;
+    font-weight:bold;
+    font-size:20px;
+    margin-right:10px;
+}

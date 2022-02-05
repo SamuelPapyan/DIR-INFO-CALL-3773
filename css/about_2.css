@@ -1,0 +1,8 @@
+#container{
+    height:600px;
+    background-image:url('../images/staff_me.png');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    margin-bottom:10px;
+    margin-top:10px;
+}

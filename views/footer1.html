@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>Price List</title>
+    <link rel="stylesheet" href="../css/layout.css" type="text/css">
+    <link rel="stylesheet" href="../css/price_list.css" type="text/css">
+    <script type="module" src="../js/session/registerPanel.js"></script>
+    <script>
+        window.addEventListener('load',async()=>{
+            document.querySelector('#blog-link').addEventListener('click',(event)=>{
+                event.preventDefault();
+                if(window.localStorage.getItem('samvel_directory_user_token')){
+                    window.location.href = "/views/blog.html";
+                }
+                else{
+                    window.location.href = "/views/login.html";
+                }
+            });
+        });
+    </script>
+    <link rel="icon" href="../images/DIR_INFO_CALL_LOGO_V2.PNG" type="image/png" size="16x16">
+</head>
+<body>
+<div id="menu">
+    <div class="col0">
+        <a href="tel: 3773">
+            <img src="../images/call_us_3.png" id="callUs" alt="">
+        </a>
+    </div>
+    <div class="col1">
+        <a href="/views/about_1.html">About Us</a>
+        <a href="/views/send-mail.html">Contact Us</a>
+        <a href="/views/categories.html">Categories</a>
+        <a href="/views/price_list.html">Price List</a>
+        <a href="/views/blog.html" id="blog-link">Blog</a>
+    </div>
+    <div id="logo">
+        <a href="/views">
+            <img src="../images/DIR_INFO_CALL_LOGO_V2.png" alt="">
+        </a>
+    </div>
+    <div class="col2">
+        <a href="#" class="locale" locale-lang="hy_AM">Հայ</a> <!--<img src="https://img5.goodfon.ru/wallpaper/nbig/6/43/armenia-flag-armenian-armenian-flag-flag-of-armenia-republic.jpg" alt="arm_lang">-->
+        <a href="#" class="locale" locale-lang="en_US">Eng</a> <!--<img src="https://tekinfarmed.com/images/en.png" alt="eng_lang">-->
+        <a href="#" class="locale" locale-lang="ru_RU">Рус</a> <!--<img src="https://practicalfunctionalassessment.files.wordpress.com/2020/12/russian-flag-russian-flag-russia-flag-of-russia.jpg" alt="rus_lang">-->
+    </div>
+    <div class="col3">
+        <a id="loginUrl" href="/views/login.html">Login</a>
+        <a href="/views/register.html">Sign Up</a>
+    </div>
+</div>
+<div id="container">
+    <img src="../images/footer_2_1.png" alt="price_list">
+</div>
+<div id="footer">
+    <div class="row1">
+        <div class="col1">
+            <h4>Telephones</h4>
+            <h4>հեռախոսաիին տեղեկատու</h4>
+            <a href="tel:3773">3773</a><br>
+            <a href="tel: +374 71 00 37 73">+374-71-00-37-73</a><br>
+            <h4>ընդհանուր բաժին</h4>
+            <a href="tel:+374 10 12 37 73">+374-10-12-37-73</a><br>
+            <a href="tel:+374 93 00 75 91">+374-93-00-75-91</a><br>
+            <h4>Address: <br><span style="color:dodgerblue;"> Republic of Armenia, Yerevan <br>Mamikonyants 52</span></h4>
+            <a href="http://facebook.com" target="_blank"><img src="../images/facebook.png" width="50" height="50" alt="facebook"></a>
+            <a href="http://twitter.com" target="_blank"><img src="../images/twitter.png" width="50" height="50" alt="twitter"></a>
+            <a href="http://instagram.com" target="_blank"><img src="../images/Instagram.svg.webp" width="50" height="50" alt="instagram"></a><br>
+
+        </div>
+        <div class="col2">
+            <a href="/views/about_1.html.html">About Us</a><br>
+            <a href="/views/send-mail.html">Contact Us</a><br>
+            <a href="/views/categories.html">Categories</a><br>
+            <a href="/views/price_list.html">Price List</a><br>
+            <a href="/views/blog.html">Blog</a><br><br>
+            <a href="/views/hotlines.html">ԹԵԺ ԳԾԵՐ</a><br>
+            <a href="/views/codes.html">ՀՀ մարզերի և միջազգաիին կոդեր</a><br>
+            <a href="/views/mailIndexes.html">Երևանի փոստային դասիչներ</a><br>
+            <a href="/views/oldNewStreets.html">Փողոցների հին ու նոր անվանումներ</a><br>
+            <a target="_blank" href="https://www.google.com/maps/@40.0090187,45.2423152,8z">ՔԱՐՏԵԶ</a><br><br>
+            <a href="/views/footer1.html">Գաղտնիութան քաղաքականութուն</a><br>
+            <a href="/views/footer2.html">Օգտագործման կանոններ</a><br>
+
+        </div>
+    </div>
+    <p>&copy; Samvel Directory 2021</p>
+</div>
+</body>
+</html>
