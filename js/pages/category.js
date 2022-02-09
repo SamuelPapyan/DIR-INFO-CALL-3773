@@ -7,12 +7,16 @@ import {
 
 import {getCategory} from "../api/site.js";
 
+import {getLocaleData, setLanguageData} from "../api/localization.js";
+
 import {speechs} from "../resources/speakers_speechs.js";
 import {dictionary} from "../resources/dictionary.js";
+import myRecognition from "../api/recognition.js";
 
 setTimeout(()=>{
     console.log(window.speechSynthesis.getVoices());
-},3000)
+},3000);
+
 console.log(window.speechSynthesis.getVoices());
 console.log(window.speechSynthesis.getVoices());
 console.log(window.speechSynthesis.getVoices());
@@ -33,6 +37,7 @@ window.addEventListener('load',async()=>{
         'Արտադրություն՝ պարենային ապրանքներ'
     ];
     const startRow = linkedRow.innerHTML;
+
     console.log(currentCategory);
     if(window.location.href != "http://localhost:3000/views/mak.html"){
         getCategory(currentCategory).then(res=>{
@@ -270,6 +275,8 @@ window.addEventListener('load',async()=>{
         [...document.querySelectorAll('.locale')].forEach(elem=>{
             elem.addEventListener('click',async(e)=>{
                 e.preventDefault();
+                const currentCategory = window.localStorage.getItem("samvel_directory_current_cat");
+                if(currentCategory == "Գրադարաններ"){
                 [...document.querySelectorAll('#organizations .post h3')].forEach(elem1=>{
                     if(elem.getAttribute('locale-lang') == "hy_AM"){
                         elem1.textContent = dictionary[currentCategory][elem1.getAttribute('org-id')]['arm'];
@@ -280,7 +287,12 @@ window.addEventListener('load',async()=>{
                         elem1.textContent = dictionary[currentCategory][elem1.getAttribute('org-id')]['rus'];
                     }
                 });
-
+                }else {
+                    const response = await setLanguageData(elem.getAttribute('locale-lang'));
+                    if (response.success) {
+                        window.location.reload();
+                    }
+                }
             })
         });
     }
@@ -299,5 +311,30 @@ window.addEventListener('load',async()=>{
             window.location.href = "/views/login.html";
         }
     });
+
+    getLocaleData().then(response=>{
+        console.log(response);
+        if(response.success){
+            myRecognition.setLang(response.data.lang);
+            console.log(response.data.lang);
+            console.log(myRecognition.recognition.lang);
+        }
+        else{
+            console.log("GoodBye");
+        }
+        document.querySelector("#voiceRecorder").addEventListener('click',()=>{
+            document.querySelector('#voiceRecorder').style.color = "green";
+            myRecognition.recognition.start();
+        });
+
+        myRecognition.recognition.addEventListener('result',(event)=>{
+            document.querySelector('#voiceRecorder').style.color = "white"
+            document.querySelector('input[name="search-query"]').value = event.results[0][0].transcript;
+            window.localStorage.setItem("samvel_directory_search_query",document.querySelector('input[name="search-query"]').value);
+            window.location.href = "search-result.html";
+        });
+    });
+
+
     await localeLangsSet();
 });

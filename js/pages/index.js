@@ -1,4 +1,6 @@
 import {getCurrentUserData} from "../api/user.js";
+import {getLocaleData, setLanguageData} from "../api/localization.js";
+import myRecognition from "../api/recognition.js";
 
 function setCookie(cname, cvalue, seconds) {
     var d = new Date();
@@ -96,4 +98,32 @@ window.addEventListener('load',async()=>{
             window.location.href = "/views/login.html";
         }
     });
+    const localeLangsSet = async ()=>{
+        [...document.querySelectorAll('.locale')].forEach(elem=>{
+            elem.addEventListener('click',async()=>{
+                const response = await setLanguageData(elem.getAttribute('locale-lang'));
+                if(response.success){
+                    window.location.reload();
+                }
+            })
+        });
+    }
+
+    getLocaleData().then(response=>{
+        console.log("locale data loading")
+        console.log(response.data.lang);
+        myRecognition.setLang(response.data.lang);
+        document.querySelector('#voiceRecorder').addEventListener('click',()=>{
+            document.querySelector("#voiceRecorder").style.color = "green";
+            myRecognition.recognition.start();
+        });
+        myRecognition.recognition.addEventListener('result',(event)=>{
+            document.querySelector("#voiceRecorder").style.color = "white";
+            document.querySelector('input[name="search"]').value = event.results[0][0].transcript;
+            window.localStorage.setItem('samvel_directory_search_query',searchInput.value);
+            window.location.href = "/views/search-result.html";
+        });
+    });
+
+    await localeLangsSet();
 });

@@ -145,7 +145,7 @@ body{
 #search-box{
     position:relative;
     top:-55px;
-    left:-50px;
+    left:-100px;
     text-align:center;
 }
 
@@ -156,9 +156,10 @@ body{
     margin-left:230px;
 }
 
-#searchBtn{
+#searchBtn, #voiceRecorder{
     height:35px;
-    width:120px;
+    width:50px;
+    cursor:pointer;
     font-size:20px;
     background-color:blue;
     color:white;
