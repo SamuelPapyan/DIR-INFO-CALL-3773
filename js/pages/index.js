@@ -1,20 +1,21 @@
 import {getCurrentUserData} from "../api/user.js";
 import {getLocaleData, setLanguageData} from "../api/localization.js";
+import playSound from "../api/playSound.js";
 import myRecognition from "../api/recognition.js";
 
 function setCookie(cname, cvalue, seconds) {
-    var d = new Date();
+    const d = new Date();
     d.setTime(d.getTime() + (seconds*1000));
-    var expires = "expires="+ d.toUTCString();
+    const expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
+    let name = cname + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
         }
@@ -109,10 +110,14 @@ window.addEventListener('load',async()=>{
         });
     }
 
+    [...document.querySelectorAll('.has-sound')].forEach(elem=>{
+        elem.addEventListener('mouseover',playSound);
+    })
+
     getLocaleData().then(response=>{
-        console.log("locale data loading")
         console.log(response.data.lang);
         myRecognition.setLang(response.data.lang);
+        document.querySelector('input[name="search"]').setAttribute("placeholder",response.data.searchOrganization);
         document.querySelector('#voiceRecorder').addEventListener('click',()=>{
             document.querySelector("#voiceRecorder").style.color = "green";
             myRecognition.recognition.start();

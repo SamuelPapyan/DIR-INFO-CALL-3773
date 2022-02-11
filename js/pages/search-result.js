@@ -2,13 +2,11 @@ import {searchOrganizations, deleteOrganization, getOneOrganization} from "../ap
 import {speechs} from "../resources/speakers_speechs.js";
 import {getLocaleData, setLanguageData} from "../api/localization.js";
 import myRecognition from "../api/recognition.js";
+import playSound from "../api/playSound.js";
 
 setTimeout(()=>{
     console.log(window.speechSynthesis.getVoices());
 },3000)
-console.log(window.speechSynthesis.getVoices());
-console.log(window.speechSynthesis.getVoices());
-console.log(window.speechSynthesis.getVoices());
 
 window.addEventListener('load',async()=>{
     const posts = document.querySelector("#organizations");
@@ -16,11 +14,17 @@ window.addEventListener('load',async()=>{
     const voiceButton = document.querySelector('#voiceRecorder');
     const searchQuery = window.localStorage.getItem('samvel_directory_search_query');
 
+    const searchListener = () =>{
+        const searchQuery = document.querySelector('input[name="search-query"]').value;
+        window.localStorage.setItem('samvel_directory_search_query',searchQuery);
+        window.location.href = "/views/search-result.html";
+    }
+
+    document.title = "Search Result for \"" + searchQuery + "\" | DIR INFO CALL 3773";
     searchInput.value = searchQuery;
     if(window.location.href == "http://localhost:3000/views/search-result.html"){
         const response = await searchOrganizations(searchQuery);
         console.log(response);
-
         if(response.success){
             if(response.data.length > 0){
                 const singleClicks = ()=>{
@@ -263,11 +267,7 @@ window.addEventListener('load',async()=>{
         }
     }
 
-    document.querySelector('#search').addEventListener('click',()=>{
-        const searchQuery = document.querySelector('input[name="search-query"]').value;
-        window.localStorage.setItem('samvel_directory_search_query',searchQuery);
-        window.location.href = "/views/search-result.html";
-    });
+    document.querySelector('#search').addEventListener('click',searchListener);
 
     document.querySelector('#blog-link').addEventListener('click',(event)=>{
         event.preventDefault();
@@ -284,11 +284,15 @@ window.addEventListener('load',async()=>{
             elem.addEventListener('click',async()=>{
                 const response = await setLanguageData(elem.getAttribute('locale-lang'));
                 if(response.success){
-                    window.location.reload();
+                    searchListener();
                 }
             })
         });
     }
+
+    [...document.querySelectorAll('.has-sound')].forEach(elem=>{
+        elem.addEventListener('mouseover',playSound);
+    });
 
     getLocaleData().then(res=>{
         if(res.success){

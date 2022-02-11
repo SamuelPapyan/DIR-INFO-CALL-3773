@@ -92,10 +92,14 @@ body{
 	color:blue;
 }
 
-#container .row1 .col3 ul li{
-    text-decoration:none;
-    color:blue;
+#container .row1 .col3 ul li:hover{
+    padding:3px;
 }
+#container .row1 .col3 ul li:hover{
+    background-color:#ffff00;
+    border-radius:10px;
+}
+
 #container .row1 .col3 ul li img{
     width:16px;
     height:16px;

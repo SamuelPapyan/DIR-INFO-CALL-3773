@@ -3,5 +3,6 @@
   "createPost":"Создать пост",
   "createOrg": "Создать Организацию",
   "about_us_info": "about_us_ru.PNG",
-  "lang":"ru-RU"
+  "lang":"ru-RU",
+  "searchOrganization": "Найти организацию"
 }

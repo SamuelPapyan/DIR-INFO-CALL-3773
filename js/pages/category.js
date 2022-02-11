@@ -12,6 +12,7 @@ import {getLocaleData, setLanguageData} from "../api/localization.js";
 import {speechs} from "../resources/speakers_speechs.js";
 import {dictionary} from "../resources/dictionary.js";
 import myRecognition from "../api/recognition.js";
+import playSound from "../api/playSound.js";
 
 setTimeout(()=>{
     console.log(window.speechSynthesis.getVoices());
@@ -38,7 +39,7 @@ window.addEventListener('load',async()=>{
     ];
     const startRow = linkedRow.innerHTML;
 
-    console.log(currentCategory);
+    document.title = currentCategory + " | DIR INFO CALL 3773";
     if(window.location.href != "http://localhost:3000/views/mak.html"){
         getCategory(currentCategory).then(res=>{
             console.log("Hello");
@@ -183,6 +184,12 @@ window.addEventListener('load',async()=>{
                             speechUttr.rate = 0.75;
                             window.speechSynthesis.speak(speechUttr);
                         })
+                        elem.addEventListener('mouseover',(event)=>{
+                            event.target.src="../images/arm_speaker_glow.png";
+                        })
+                        elem.addEventListener('mouseout',(event)=>{
+                            event.target.src="../images/arm_speaker.png";
+                        });
                     });
                 }
                 const speakerEngClicks = ()=>{
@@ -193,7 +200,13 @@ window.addEventListener('load',async()=>{
                             speechUttr.voice = window.speechSynthesis.getVoices()[1];
                             speechUttr.rate = 0.75;
                             window.speechSynthesis.speak(speechUttr);
-                        })
+                        });
+                        elem.addEventListener('mouseover',(event)=>{
+                            event.target.src="../images/eng_speaker_glow.png";
+                        });
+                        elem.addEventListener('mouseout',(event)=>{
+                            event.target.src="../images/eng_speaker.png";
+                        });
                     });
                 }
                 const speakerRusClicks = ()=>{
@@ -204,7 +217,13 @@ window.addEventListener('load',async()=>{
                             speechUttr.voice = window.speechSynthesis.getVoices()[15];
                             speechUttr.rate = 0.75;
                             window.speechSynthesis.speak(speechUttr);
-                        })
+                        });
+                        elem.addEventListener('mouseover',(event)=>{
+                            event.target.src="../images/rus_speaker_glow.png";
+                        });
+                        elem.addEventListener('mouseout',(event)=>{
+                            event.target.src="../images/rus_speaker.png";
+                        });
                     });
                 }
                 [...response.data].forEach(post =>{
@@ -302,6 +321,11 @@ window.addEventListener('load',async()=>{
         window.localStorage.setItem('samvel_directory_search_query',searchQuery);
         window.location.href = "/views/search-result.html";
     });
+
+    [...document.querySelectorAll('.has-sound')].forEach(elem=>{
+        elem.addEventListener('mouseover',playSound);
+    });
+
     document.querySelector('#blog-link').addEventListener('click',(event)=>{
         event.preventDefault();
         if(window.localStorage.getItem('samvel_directory_user_token')){

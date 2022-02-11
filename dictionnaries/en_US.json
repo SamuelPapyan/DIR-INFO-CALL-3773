@@ -3,5 +3,6 @@
   "createPost":"Create Post",
   "createOrg": "Create Organization",
   "about_us_info": "about_us_en.PNG",
-  "lang": "en-US"
+  "lang": "en-US",
+  "searchOrganization": "Search organization"
 }
