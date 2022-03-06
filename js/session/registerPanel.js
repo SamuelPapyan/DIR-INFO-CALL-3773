@@ -13,6 +13,7 @@ window.addEventListener('load',()=>{
             const usernameSpan = document.createElement('span');
             const logout = document.createElement('a');
             usernameSpan.textContent = res.data.username;
+            usernameSpan.id = "usernameSpan";
             logout.textContent = "Logout";
             logout.id = "logout";
             logout.href = "#";
@@ -21,7 +22,6 @@ window.addEventListener('load',()=>{
             registerPanel.innerHTML = newBox.innerHTML;
             document.querySelector('#logout').addEventListener('click',(event)=>{
                 event.preventDefault();
-                console.log("a is clicked");
                 window.localStorage.removeItem('samvel_directory_user_token');
                 window.location.reload();
             })

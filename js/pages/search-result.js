@@ -294,13 +294,23 @@ window.addEventListener('load',async()=>{
         elem.addEventListener('mouseover',playSound);
     });
 
+    [...document.querySelectorAll('.red-click')].forEach(elem=>{
+        elem.addEventListener('click',(e)=>e.target.style.color = "red");
+    });
+
+    [...document.querySelectorAll('.yellow-hover')].forEach(elem=>{
+        const currentColor = elem.style.color;
+        elem.addEventListener('mouseover',(e)=>e.target.style.color="#FFA825");
+        elem.addEventListener('mouseout',(e)=>e.target.style.color=currentColor);
+    });
+
     getLocaleData().then(res=>{
         if(res.success){
             myRecognition.recognition.lang = res.data.lang;
         }
         voiceButton.addEventListener('click',()=>{
             myRecognition.recognition.start();
-            voiceButton.style.color="green";
+            voiceButton.style.color="red";
         });
         myRecognition.recognition.addEventListener('result',(event)=>{
             voiceButton.style.color="white";

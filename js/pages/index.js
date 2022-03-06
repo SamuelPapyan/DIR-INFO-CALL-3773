@@ -29,12 +29,12 @@ function getCookie(cname) {
 window.addEventListener('load',async()=>{
     const searchInput = document.querySelector('input[name="search"]');
     const searchBtn = document.querySelector('#searchBtn');
-    const hotlineToggle = document.querySelector('#toogle');
-    const hotLines = document.querySelector('#hot-lines');
+    const hotlineToggle = document.querySelector('#toogle')
     const callUs = document.querySelector('#callUs');
     const mapLink = document.querySelector('#mapLink');
     const showcase = document.querySelector('#showcase');
     const registerPanel = document.querySelector('#container .row1 .col2');
+    const worldPhones = document.querySelector('#world-phones-img');
     console.log(registerPanel);
     callUs.addEventListener('click',()=>{
         window.location.href="tel:3773";
@@ -46,6 +46,25 @@ window.addEventListener('load',async()=>{
     hotlineToggle.addEventListener('click',()=>{
         window.location.href="/views/hotlines.html";
     });
+    hotlineToggle.addEventListener('mouseover',()=>{
+        hotlineToggle.src = "../images/hotlines_hover2.png"
+    });
+    hotlineToggle.addEventListener('mouseout',()=>{
+        hotlineToggle.src = "../images/hotlines.png";
+    });
+    /*
+    mapLink.addEventListener('mouseover',()=>{
+        mapLink.src = "../images/map_2_1_hover2.png";
+    });
+    mapLink.addEventListener('mouseout',()=>{
+        mapLink.src = "../images/map_2_1.png";
+    });
+    worldPhones.addEventListener('mouseover',()=>{
+        worldPhones.src = "../images/world-phones-2_hover2.png";
+    });
+    worldPhones.addEventListener('mouseout',()=>{
+        worldPhones.src = "../images/world-phones-2.png";
+    });*/
 
     if(!getCookie('enter')){
         showcase.style.opacity = 1;
@@ -112,14 +131,29 @@ window.addEventListener('load',async()=>{
 
     [...document.querySelectorAll('.has-sound')].forEach(elem=>{
         elem.addEventListener('mouseover',playSound);
-    })
+    });
 
+    [...document.querySelectorAll('.red-click')].forEach(elem=>{
+        elem.addEventListener('click',(e)=>e.target.style.color = "red");
+    });
+
+    [...document.querySelectorAll('.yellow-hover')].forEach(elem=>{
+        const currentColor = elem.style.color;
+        elem.addEventListener('mouseover',(e)=>e.target.style.color="#FFA825");
+        elem.addEventListener('mouseout',(e)=>e.target.style.color=currentColor);
+    });
+    document.querySelector('#loginUrl').addEventListener('click',()=>{
+        window.localStorage.setItem('samvel_directory_return_url',window.location.href);
+    });
+    document.querySelector('#signUpUrl').addEventListener('click',()=>{
+        window.localStorage.setItem('samvel_directory_return_url',window.location.href);
+    });
     getLocaleData().then(response=>{
         console.log(response.data.lang);
         myRecognition.setLang(response.data.lang);
         document.querySelector('input[name="search"]').setAttribute("placeholder",response.data.searchOrganization);
         document.querySelector('#voiceRecorder').addEventListener('click',()=>{
-            document.querySelector("#voiceRecorder").style.color = "green";
+            document.querySelector("#voiceRecorder").style.color = "red";
             myRecognition.recognition.start();
         });
         myRecognition.recognition.addEventListener('result',(event)=>{

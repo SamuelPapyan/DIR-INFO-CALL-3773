@@ -387,3 +387,13 @@ body{
 #world-phones img{
     width:100%;
 }
+
+.bold{
+    font-weight:bold;
+}
+
+#mapLink:hover, #world-phones-img:hover{
+    background-color:yellow;
+    padding:3px;
+    border-radius:10px;
+}

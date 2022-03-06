@@ -132,28 +132,6 @@ window.addEventListener('load',async()=>{
         if(response.success){
             posts.innerHTML = "";
             if(response.data.length > 0){
-                /*
-                const updateClicks = ()=>{
-                    [...document.getElementsByClassName("update-button")].forEach(elem=>{
-                        elem.addEventListener('click',(event)=>{
-                            window.localStorage.setItem("samvel_directory_current_org",event.target.getAttribute("org-id"));
-                            window.location.href="/views/organization-update.html";
-                        });
-                    });
-                }
-                const deleteClicks = ()=>{
-                    [...document.getElementsByClassName("delete-button")].forEach(elem=>{
-                        elem.addEventListener('click',(event)=>{
-                            deleteOrganization(event.target.getAttribute("org-id")).then(data=>{
-                                console.log(data);
-                                if(data.success){
-                                    window.location.reload();
-                                }
-                            });
-                        });
-                    });
-                }
-                */
                 const singleClicks = ()=>{
                     [...document.querySelectorAll('.post h3')].forEach(elem=>{
                         elem.addEventListener('click',(event)=>{
@@ -179,10 +157,13 @@ window.addEventListener('load',async()=>{
                     [...document.querySelectorAll('.post .speaker-arm')].forEach(elem=>{
                         elem.addEventListener('click',(event)=>{
                             event.preventDefault();
-                            const speechUttr = new SpeechSynthesisUtterance(speechs[currentCategory][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["arm"]);
-                            speechUttr.voice = window.speechSynthesis.getVoices()[15];
-                            speechUttr.rate = 0.75;
-                            window.speechSynthesis.speak(speechUttr);
+                            const speechText = speechs[currentCategory][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["arm"];
+                            if(speechText){
+                                const speechUttr = new SpeechSynthesisUtterance(speechText);
+                                speechUttr.voice = window.speechSynthesis.getVoices()[16];
+                                speechUttr.rate = 0.75;
+                                window.speechSynthesis.speak(speechUttr);
+                            }
                         })
                         elem.addEventListener('mouseover',(event)=>{
                             event.target.src="../images/arm_speaker_glow.png";
@@ -196,10 +177,13 @@ window.addEventListener('load',async()=>{
                     [...document.querySelectorAll('.post .speaker-eng')].forEach(elem=>{
                         elem.addEventListener('click',(event)=>{
                             event.preventDefault();
-                            const speechUttr = new SpeechSynthesisUtterance(speechs[currentCategory][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["eng"]);
-                            speechUttr.voice = window.speechSynthesis.getVoices()[1];
-                            speechUttr.rate = 0.75;
-                            window.speechSynthesis.speak(speechUttr);
+                            const speechText = speechs[currentCategory][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["eng"];
+                            if(speechText) {
+                                const speechUttr = new SpeechSynthesisUtterance(speechText);
+                                speechUttr.voice = window.speechSynthesis.getVoices()[2];
+                                speechUttr.rate = 0.75;
+                                window.speechSynthesis.speak(speechUttr);
+                            }
                         });
                         elem.addEventListener('mouseover',(event)=>{
                             event.target.src="../images/eng_speaker_glow.png";
@@ -213,10 +197,13 @@ window.addEventListener('load',async()=>{
                     [...document.querySelectorAll('.post .speaker-rus')].forEach(elem=>{
                         elem.addEventListener('click',(event)=>{
                             event.preventDefault();
-                            const speechUttr = new SpeechSynthesisUtterance(speechs[currentCategory][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["rus"]);
-                            speechUttr.voice = window.speechSynthesis.getVoices()[15];
-                            speechUttr.rate = 0.75;
-                            window.speechSynthesis.speak(speechUttr);
+                            const speechText = speechs[currentCategory][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["rus"]
+                            if(speechText){
+                                const speechUttr = new SpeechSynthesisUtterance(speechText);
+                                speechUttr.voice = window.speechSynthesis.getVoices()[16];
+                                speechUttr.rate = 0.75;
+                                window.speechSynthesis.speak(speechUttr);
+                            }
                         });
                         elem.addEventListener('mouseover',(event)=>{
                             event.target.src="../images/rus_speaker_glow.png";
@@ -326,6 +313,16 @@ window.addEventListener('load',async()=>{
         elem.addEventListener('mouseover',playSound);
     });
 
+    [...document.querySelectorAll('.red-click')].forEach(elem=>{
+        elem.addEventListener('click',(e)=>e.target.style.color = "red");
+    });
+
+    [...document.querySelectorAll('.yellow-hover')].forEach(elem=>{
+        const currentColor = elem.style.color;
+        elem.addEventListener('mouseover',(e)=>e.target.style.color="#FFA825");
+        elem.addEventListener('mouseout',(e)=>e.target.style.color=currentColor);
+    });
+
     document.querySelector('#blog-link').addEventListener('click',(event)=>{
         event.preventDefault();
         if(window.localStorage.getItem('samvel_directory_user_token')){
@@ -347,7 +344,7 @@ window.addEventListener('load',async()=>{
             console.log("GoodBye");
         }
         document.querySelector("#voiceRecorder").addEventListener('click',()=>{
-            document.querySelector('#voiceRecorder').style.color = "green";
+            document.querySelector('#voiceRecorder').style.color = "red";
             myRecognition.recognition.start();
         });
 

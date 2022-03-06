@@ -8,9 +8,6 @@ window.addEventListener('load',async()=>{
     document.getElementById('login').addEventListener('click',async()=>{
         const username = document.querySelector('input[name="username"]').value;
         const password = document.querySelector('input[name="password"]').value;
-        console.log({
-            username,password
-        });
         login(username, password).then(data=>{
             if(data.success === true){
                 window.localStorage.setItem('samvel_directory_user_token',data.data);
