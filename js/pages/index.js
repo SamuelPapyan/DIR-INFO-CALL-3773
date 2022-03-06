@@ -31,10 +31,9 @@ window.addEventListener('load',async()=>{
     const searchBtn = document.querySelector('#searchBtn');
     const hotlineToggle = document.querySelector('#toogle')
     const callUs = document.querySelector('#callUs');
-    const mapLink = document.querySelector('#mapLink');
     const showcase = document.querySelector('#showcase');
     const registerPanel = document.querySelector('#container .row1 .col2');
-    const worldPhones = document.querySelector('#world-phones-img');
+    const oldNewStreets = document.querySelector('#oldNewStreets');
     console.log(registerPanel);
     callUs.addEventListener('click',()=>{
         window.location.href="tel:3773";
@@ -52,21 +51,17 @@ window.addEventListener('load',async()=>{
     hotlineToggle.addEventListener('mouseout',()=>{
         hotlineToggle.src = "../images/hotlines.png";
     });
-    /*
-    mapLink.addEventListener('mouseover',()=>{
-        mapLink.src = "../images/map_2_1_hover2.png";
-    });
-    mapLink.addEventListener('mouseout',()=>{
-        mapLink.src = "../images/map_2_1.png";
-    });
-    worldPhones.addEventListener('mouseover',()=>{
-        worldPhones.src = "../images/world-phones-2_hover2.png";
-    });
-    worldPhones.addEventListener('mouseout',()=>{
-        worldPhones.src = "../images/world-phones-2.png";
-    });*/
-
-    if(!getCookie('enter')){
+    oldNewStreets.addEventListener('mouseover',(e)=>{
+        e.target.style.border = "2px solid blue";
+        e.target.style.cursor = "pointer";
+    })
+    oldNewStreets.addEventListener('mouseout',(e)=>{
+        e.target.style.border = "0 none transparent";
+    })
+    oldNewStreets.addEventListener('click',()=>{
+        document.location.href = "/views/oldNewStreets.html";
+    })
+    /*if(!getCookie('enter')){
         showcase.style.opacity = 1;
         setTimeout(()=>{
             for(let i = 0; i < 10; i++){
@@ -82,7 +77,7 @@ window.addEventListener('load',async()=>{
     }else{
         showcase.style.opacity = 0;
         showcase.style.display = "none";
-    }
+    }*/
     if(window.localStorage.getItem('samvel_directory_user_token')){
         getCurrentUserData().then(res=>{
             const newBox = document.createElement('div');

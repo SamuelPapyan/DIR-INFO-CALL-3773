@@ -161,7 +161,7 @@ window.addEventListener('load',async()=>{
                             if(speechText){
                                 const speechUttr = new SpeechSynthesisUtterance(speechText);
                                 speechUttr.voice = window.speechSynthesis.getVoices()[16];
-                                speechUttr.rate = 0.75;
+                                speechUttr.rate = 0.85;
                                 window.speechSynthesis.speak(speechUttr);
                             }
                         })

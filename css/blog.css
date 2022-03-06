@@ -11,25 +11,26 @@
 }
 .subcontainer2{
     width:100%;
-    background-color:white;
+    background-color:lightslategray;
     padding:10px;
 }
 
 .blog-image{
     width:150px;
     height:150px;
-    display:block;
-    margin:auto;
+    margin:10px;
 }
 .subheader h2{
     font-weight:bold;
+    font-size:3em;
+    color:rebeccapurple;
     text-align:center;
 }
 .blog_image_main{
-    width:50%;
+    width:40%;
 }
 .blog_image_secondary{
-    width:39%;
+    width:29%;
 }
 ._row1{
     display:flex;
@@ -50,7 +51,7 @@
     color:red;
 }
 .social_links_heading{
-    color:blue;
+    color:white;
     font-weight:bold;
     text-align:center;
 }
@@ -74,4 +75,33 @@
 ._row0{
     margin-top:20px;
     margin-bottom:20px;
+}
+
+._row3{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.my-btn-primary{
+    background-color:rebeccapurple;
+    color:white;
+}
+#message_form{
+    width:40%;
+    display:inline-block;
+}
+
+.row3Image{
+    display:inline-block;
+    width:40%;
+}
+.row3Image img{
+    width:100%;
+}
+.margin-top-20{
+    margin-top:20px;
+}
+#message_form label{
+    color:white;
+    font-weight:bold;
 }

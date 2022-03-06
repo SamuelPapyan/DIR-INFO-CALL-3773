@@ -149,15 +149,16 @@ body{
 #search-box{
     position:relative;
     top:-55px;
-    left:-100px;
-    text-align:center;
+    left:160px;
+    text-align:left;
+    margin:auto;
 }
 
 #search-box input[name="search"]{
     margin-bottom:5px;
     width:500px;
     height:20px;
-    margin-left:230px;
+    margin-left:180px;
 }
 
 #searchBtn, #voiceRecorder{
@@ -240,7 +241,7 @@ body{
     width:80%;
     padding-top:50px;
 }
-#showcase img{
+.showcase-logo{
     width:500px;
     height:550px;
     float:left;
@@ -396,4 +397,12 @@ body{
     background-color:yellow;
     padding:3px;
     border-radius:10px;
+}
+
+.team-logo{
+    position:absolute;
+    top:10px;
+    left:10px;
+    width:245px;
+    height:100px;
 }
