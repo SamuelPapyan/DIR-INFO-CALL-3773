@@ -53,10 +53,16 @@ window.addEventListener('load',async()=>{
                             event.preventDefault();
                             const catName = elem.getAttribute('cat-name');
                             const speechUttr = new SpeechSynthesisUtterance(speechs[catName][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["arm"]);
-                            speechUttr.voice = window.speechSynthesis.getVoices()[15];
-                            speechUttr.rate = 0.75;
+                            speechUttr.voice = window.speechSynthesis.getVoices()[16];
+                            speechUttr.rate = 0.85;
                             window.speechSynthesis.speak(speechUttr);
-                        })
+                        });
+                        elem.addEventListener('mouseover',(event)=>{
+                            event.target.src="../images/arm_speaker_glow.png";
+                        });
+                        elem.addEventListener('mouseout',(event)=>{
+                            event.target.src="../images/arm_speaker.png";
+                        });
                     });
                 }
                 const speakerEngClicks = ()=>{
@@ -65,10 +71,16 @@ window.addEventListener('load',async()=>{
                             event.preventDefault();
                             const catName = elem.getAttribute('cat-name');
                             const speechUttr = new SpeechSynthesisUtterance(speechs[catName][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["eng"]);
-                            speechUttr.voice = window.speechSynthesis.getVoices()[1];
+                            speechUttr.voice = window.speechSynthesis.getVoices()[2];
                             speechUttr.rate = 0.75;
                             window.speechSynthesis.speak(speechUttr);
+                        });
+                        elem.addEventListener('mouseover',(event)=>{
+                            event.target.src="../images/eng_speaker_glow.png";
                         })
+                        elem.addEventListener('mouseout',(event)=>{
+                            event.target.src="../images/eng_speaker.png";
+                        });
                     });
                 }
                 const speakerRusClicks = ()=>{
@@ -77,10 +89,16 @@ window.addEventListener('load',async()=>{
                             event.preventDefault();
                             const catName = elem.getAttribute('cat-name');
                             const speechUttr = new SpeechSynthesisUtterance(speechs[catName][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["rus"]);
-                            speechUttr.voice = window.speechSynthesis.getVoices()[15];
+                            speechUttr.voice = window.speechSynthesis.getVoices()[16];
                             speechUttr.rate = 0.75;
                             window.speechSynthesis.speak(speechUttr);
-                        })
+                        });
+                        elem.addEventListener('mouseover',(event)=>{
+                            event.target.src="../images/rus_speaker_glow.png";
+                        });
+                        elem.addEventListener('mouseout',(event)=>{
+                            event.target.src="../images/rus_speaker.png";
+                        });
                     });
                 }
                 [...response.data].forEach(post =>{
