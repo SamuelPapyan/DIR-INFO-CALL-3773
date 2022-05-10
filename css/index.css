@@ -5,7 +5,7 @@ input[name="search"]{
     width:300px;
 }
 body{
-    background-image:url('https://cdn.pixabay.com/photo/2019/06/02/15/45/call-centre-4246688_960_720.jpg');
+    background-image:url('../images/homepage_background.jpg');
     background-size:100% 650px;
     background-repeat:no-repeat;
 }
@@ -137,28 +137,42 @@ body{
     width:100%;
     height:50px;
 }
+#toogle:hover{
+    padding:10px;
+    border-radius:25px;
+    background-color:yellow;
+}
+
+#oldNewStreets:hover{
+    padding:16px;
+    background-color:yellow;
+}
+
 #callUs{
+    position:absolute;
     width:220px;
     height:80px;
     margin-left:20px;
+    top:70px;
+}
+#callUs:hover{
+    padding:16px;
+    background-color:yellow;
+    border-radius:25px;
 }
 #toogle:hover, #callUs:hover{
     cursor:pointer;
 }
 
 #search-box{
-    position:relative;
-    top:-55px;
-    left:160px;
-    text-align:left;
-    margin:auto;
+    position:absolute;
+    top:477px;
+    left:380px;
+    width:650px;
 }
 
 #search-box input[name="search"]{
-    margin-bottom:5px;
     width:500px;
-    height:20px;
-    margin-left:180px;
 }
 
 #searchBtn, #voiceRecorder{
@@ -218,9 +232,9 @@ body{
 
 #logo{
     width:180px;
-    position:relative;
-    top:140px;
-    left:260px;
+    position:absolute;
+    top:320px;
+    left:620px;
 }
 
 #showcase{
@@ -313,7 +327,7 @@ body{
     height:100px;
     position:relative;
     justify-content: space-between;
-    top:-45px;
+    top:-5px;
 }
 
 #container .row5 .org{
@@ -325,25 +339,38 @@ body{
 }
 
 .org1{
-    background-image:url("../images/alphapharm_2.jpg");
+    background-image:url("../images/alphapharm_2.png");
 }
 .org2{
     background-image:url("../images/ameriabank_2.jpg");
 }
 .org3{
-    background-image:url("../images/astxik_2.jpg");
+    background-image:url("../images/astxik_2.png");
 }
 .org4{
-    background-image:url("../images/zigzag.jpg");
+    background-image:url("../images/zigzag.png");
 }
 .org5{
-    background-image:url("../images/tashir_pizza.jpg");
+    background-image:url("../images/tashir_pizza.png");
 }
 .org6{
-    background-image:url("../images/mic_armenia.jpg");
+    background-image:url("../images/mic_armenia.png");
 }
 .org7{
-    background-image:url("../images/rio_mall_2.jpg");
+    background-image:url("../images/rio_mall_2.png");
+}
+.org{
+    background-color:white;
+}
+.org:hover{
+    background-color:yellow;
+}
+
+.reflex-link{
+    background-color:white;
+}
+.reflex-link:hover{
+    background-color:yellow;
 }
 
 #container .row5 a{
@@ -405,4 +432,33 @@ body{
     left:10px;
     width:245px;
     height:100px;
+}
+
+#worldPhones:hover {
+    padding: 5px;
+    background-color: yellow;
+    border-radius: 25px;
+}
+
+.row2{
+    margin-top:60px;
+}
+
+#soundMuter{
+    position:absolute;
+    top:20px;
+    left:30px;
+    width:50px;
+    height:50px;
+    font-size: 42px;
+    background-color:blue;
+    color:white;
+    border-style:none;
+    border-radius:25px;
+    cursor:pointer;
+}
+
+#logo:hover{
+    background-color:yellow;
+    border-radius:25px;
 }

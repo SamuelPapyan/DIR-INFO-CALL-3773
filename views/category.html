@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" href="../css/layout.css" type="text/css">
     <link rel="stylesheet" href="../css/category.css" type="text/css">
+    <link rel="stylesheet" href="../css/hcm_switch.css" type="text/css">
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=qMAhANnh"></script>
     <script type="module" src="../js/pages/category.js"></script>
     <script type="module" src="../js/session/registerPanel.js"></script>
     <link rel="stylesheet" href="../css/category_beta.css" type="text/css">
@@ -65,7 +67,7 @@
             justify-content: space-between;
         }
         input[name="search-query"]{
-            width:400px;
+            width:250px;
             border-radius:25px;
             border-color:blue;
         }
@@ -84,6 +86,11 @@
             background-color:powderblue;
             border-radius:25px;
             height:490px;
+        }
+        #search-box{
+            position:absolute;
+            left:900px;
+            top:80px;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -117,13 +124,21 @@
         <a id="loginUrl" href="/views/login.html">Login</a>
         <a href="/views/register.html">Sign Up</a>
     </div>
-
+    <label id="hcm-switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
 </div>
 <div id="container">
 
     <div id="rowX">
-        <p id="path"><a href="/views/categories.html"><img src="../images/category_minilogo.jpg" alt=""></a> &raquo; </p>
+        <p id="path"><a href="/views/categories.html"><img src="../images/category_minilogo.png" alt=""></a> &raquo; </p>
         <div id="search-box">
+            <b id="text-size-box">
+                <span class="black-texted" id="decrease-button"/>-</span>
+                <span class="red-texted" id="text-size-letter">A</span>
+                <span class="black-texted" id="increase-button">+</span>
+            </b>
             <input type="text" name="search-query">
             <button id="search"><i class="fa fa-search yellow-hover red-click has-sound"></i></button>
             <button id="voiceRecorder"><i class="fa fa-microphone yellow-hover has-sound"></i></button>
@@ -131,8 +146,8 @@
 
     </div>
     <div id="heading-box">
-        <h1 id="heading"></h1>
-        <p><b>Կազմակերպություններ: <span id="counter"></span></b></p>
+        <h1 class="red-texted" id="heading"></h1>
+        <p class="black-texted"><b>Կազմակերպություններ: <span id="counter">0</span></b></p>
     </div>
 
     <div id="content">

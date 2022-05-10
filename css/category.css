@@ -80,10 +80,9 @@ body{
 }
 
 #heading-box{
-    width:800px;
     position:absolute;
     top:90px;
-    left:200px;
+    left:500px;
     text-align:center;
 
 }
@@ -115,13 +114,18 @@ body{
     color:red;
     font-size: 20px;
 }
-/*
-#container ul li::before {
-    content: "\2022";
-    color: red;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+
+#increase-button, #decrease-button{
+    cursor:pointer;
 }
- */
+
+#text-size-letter{
+    color:red;
+}
+
+#text-size-box{
+    font-size:30px;
+    position:relative;
+    left:-20px;
+    top:5px;
+}

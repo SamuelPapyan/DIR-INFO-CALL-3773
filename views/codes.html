@@ -6,13 +6,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../fonts/icomoon/style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <title>Phone Codes | DIR INFO CALL 3773</title>
     <link rel="stylesheet" href="../css/layout.css" type="text/css">
     <link rel="stylesheet" href="../css/codes.css" type="text/css">
+    <link rel="stylesheet" href="../css/hcm_switch.css" type="text/css">
     <script type="module" src="../js/session/registerPanel.js"></script>
     <script type="module" src="../js/pages/codes.js"></script>
     <link rel="icon" href="../images/DIR_INFO_CALL_LOGO_V2.PNG" type="image/png" size="16x16">
@@ -45,12 +46,17 @@
         <a id="loginUrl" href="/views/login.html">Login</a>
         <a href="/views/register.html">Sign Up</a>
     </div>
+    <label id="hcm-switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
 </div>
 <div id="container">
     <div id="input-form">
         <label>Մուտքագրեք կոդը կամ բնակավայրի անվանումը</label><br>
         <input type="text" name="myInput">
-        <button id="search">Search</button>
+        <button id="search" class="red-click yellow-hover"><i class="fa fa-search has-sound" style="font-size:24px"></i></button>
+        <button id="voiceRecorder" class="yellow-hover" style="font-size:20px;"><i class="fa fa-microphone has-sound"></i></button>
     </div>
     <div id="table-box">
         <table border="1" id="results">

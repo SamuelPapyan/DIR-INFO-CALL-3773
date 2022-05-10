@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="../css/layout.css" type="text/css">
     <link rel="stylesheet" href="../css/organization-single-2.css" type="text/css">
+    <link rel="stylesheet" href="../css/hcm_switch.css" type="text/css">
     <script type="module" src="../js/session/registerPanel.js"></script>
     <script type="module" src="../js/pages/organization-single-2.js"></script>
     <style>
@@ -47,19 +48,22 @@
         </a>
     </div>
     <div class="col2">
-        <a href="#" class="locale" locale-lang="hy_AM">Հայ</a> <!--<img src="https://img5.goodfon.ru/wallpaper/nbig/6/43/armenia-flag-armenian-armenian-flag-flag-of-armenia-republic.jpg" alt="arm_lang">-->
-        <a href="#" class="locale" locale-lang="en_US">Eng</a> <!--<img src="https://tekinfarmed.com/images/en.png" alt="eng_lang">-->
-        <a href="#" class="locale" locale-lang="ru_RU">Рус</a> <!--<img src="https://practicalfunctionalassessment.files.wordpress.com/2020/12/russian-flag-russian-flag-russia-flag-of-russia.jpg" alt="rus_lang">-->
+        <a href="#" class="locale" locale-lang="hy_AM">Հայ</a>
+        <a href="#" class="locale" locale-lang="en_US">Eng</a>
+        <a href="#" class="locale" locale-lang="ru_RU">Рус</a>
     </div>
     <div class="col3">
         <a id="loginUrl" href="/views/login.html">Login</a>
         <a href="/views/register.html">Sign Up</a>
     </div>
-
+    <label id="hcm-switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
 </div>
 <div id="container">
     <div id="rowX">
-        <p id="path"><a href="/views/categories.html"><img src="../images/category_minilogo.jpg" alt=""></a> &raquo; <a href="/views/category.html" id="category"></a> &raquo; <span id="subcategory"></span></p>
+        <p id="path"><a href="/views/categories.html"><img src="../images/category_minilogo.png" alt=""></a> &raquo; <a href="/views/category.html" id="category"></a> &raquo; <span id="subcategory"></span></p>
         <div id="search-box">
             <input type="text" name="search-query">
             <button id="search">Search <i class="fa fa-search"></i></button>
@@ -97,17 +101,17 @@
             </div>
             <div id="row">
                 <div class="subcol1">
-                    <p><i class="fa fa-briefcase" style="color:red;font-size:24px;margin-right:20px;"></i> <span id="description"></span></p>
-                    <p><img src="../images/men-in-realred.png" alt="" width="24" style="margin-right:20px;"> <b><span id="director"></span></b></p>
+                    <p><i class="fa fa-briefcase red-texted" style="color:red;font-size:24px;margin-right:20px;"></i> <span class="black-texted" id="description"></span></p>
+                    <p><img src="../images/men-in-realred.png" alt="" width="24" style="margin-right:20px;"> <b><span id="director" class="black-texted"></span></b></p>
                     <div style="display:flex;" id="phone-book">
-                        <h3><i class="fa fa-phone" style="color:red; margin-right:17px;"></i></h3>
-                        <ul id="phones">
+                        <h3><i class="fa fa-phone red-texted" style="color:red; margin-right:17px;"></i></h3>
+                        <ul id="phones" class="black-texted">
 
                         </ul>
                     </div>
-                    <h3><i class="fa fa-print" style="color:red; margin-right:17px;"></i> <span id="fax"></span></h3>
+                    <h3><i class="fa fa-print red-texted" style="color:red; margin-right:17px;"></i> <span id="fax"></span></h3>
                     <div style="display:flex">
-                        <h3><i class="fa fa-briefcase" style="color:red; margin-right:17px;"></i></h3>
+                        <h3><i class="fa fa-briefcase red-texted" style="color:red; margin-right:17px;"></i></h3>
                         <div id="activities">
                             <b><i><p>
                                 Ձեր կազմակերպության գործունեության մասին ավելին...
@@ -124,10 +128,10 @@
                     </div>
                     <div id="contact-info">
                         <div>
-                            <h3 style="margin-left:10px;"><i class="fa fa-map-marker" style="color:red;font-size:36px;margin-right:25px;"></i> <span id="address"></span></h3>
-                            <h3 style="margin-left:10px;"><i class="fa fa-envelope" style="color:red;font-size:28px;margin-right:25px;"></i><span id="email"></span></h3>
-                            <h3 style="margin-left:10px;"><i class="fa fa-internet-explorer" style="color:red;margin-right:20px;"></i> <a id="website"></a></h3>
-                            <h3 style="margin-left:10px;"><img src="../images/DIR_INFO_CALL_LOGO_V2.PNG" style="width:40px;height:40px;margin-right:15px;"><a id="shortLink"></a></h3>
+                            <h3 style="margin-left:10px;"><i class="fa fa-map-marker red-texted" style="color:red;font-size:36px;margin-right:25px;"></i> <span id="address" class="black-texted"></span></h3>
+                            <h3 style="margin-left:10px;"><i class="fa fa-envelope red-texted" style="color:red;font-size:28px;margin-right:25px;"></i><span id="email" class="black-texted"></span></h3>
+                            <h3 style="margin-left:10px;"><i class="fa fa-internet-explorer red-texted" style="color:red;margin-right:20px;"></i> <a id="website" class="link-texted"></a></h3>
+                            <h3 style="margin-left:10px;"><img src="../images/DIR_INFO_CALL_LOGO_V2.PNG" style="width:40px;height:40px;margin-right:15px;"><a id="shortLink" class="link-texted"></a></h3>
                         </div>
                     </div>
                 </div>

@@ -13,6 +13,7 @@ import {speechs} from "../resources/speakers_speechs.js";
 import {dictionary} from "../resources/dictionary.js";
 import myRecognition from "../api/recognition.js";
 import playSound from "../api/playSound.js";
+import {speechText, speechTextByElement} from "../session/speechText.js";
 
 setTimeout(()=>{
     console.log(window.speechSynthesis.getVoices());
@@ -38,12 +39,23 @@ window.addEventListener('load',async()=>{
         'Արտադրություն՝ պարենային ապրանքներ'
     ];
     const startRow = linkedRow.innerHTML;
+    const increaseButton = document.querySelector('#increase-button');
+    const decreaseButton = document.querySelector('#decrease-button');
+    const textSizeBox = document.querySelector('#text-size-box');
+    const hcmSwitch = document.querySelector('#hcm-switch input');
+
+    let isHCPModeOn = false;
+
+    const switchOnHCM = (element, isModeOn)=>{
+        if(element.classList.contains('red-texted'))
+            element.style.color = isModeOn ? "yellow" : "red";
+        if(element.classList.contains('black-texted'))
+            element.style.color = isModeOn ? "white" : "black";
+    };
 
     document.title = currentCategory + " | DIR INFO CALL 3773";
     if(window.location.href != "http://localhost:3000/views/mak.html"){
         getCategory(currentCategory).then(res=>{
-            console.log("Hello");
-            console.log(res);
             if(!res.data || (res.data.subcategories.length == 1 && !res.data.subcategories[0])){
                 let imageSource = "";
                 switch(currentCategory){
@@ -75,7 +87,6 @@ window.addEventListener('load',async()=>{
                         elem.addEventListener('click', (event) => {
                             event.preventDefault();
                             getAllOrgsWithSubcategory(currentCategory, elem.getAttribute('subcat')).then(response1 => {
-                                //linkedRow.innerHTML = startRow + `&raquo; <b>${elem.getAttribute('subcat')}</b>`;
                                 if(categoryNames.includes(currentCategory)){
                                     linkedRow.innerHTML= startRow + `<a href="/views/category.html">Առևտուր</a> `;
                                 }
@@ -157,13 +168,7 @@ window.addEventListener('load',async()=>{
                     [...document.querySelectorAll('.post .speaker-arm')].forEach(elem=>{
                         elem.addEventListener('click',(event)=>{
                             event.preventDefault();
-                            const speechText = speechs[currentCategory][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["arm"];
-                            if(speechText){
-                                const speechUttr = new SpeechSynthesisUtterance(speechText);
-                                speechUttr.voice = window.speechSynthesis.getVoices()[16];
-                                speechUttr.rate = 0.85;
-                                window.speechSynthesis.speak(speechUttr);
-                            }
+                            speechText(speechs[currentCategory][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["arm"], 'hy');
                         })
                         elem.addEventListener('mouseover',(event)=>{
                             event.target.src="../images/arm_speaker_glow.png";
@@ -177,13 +182,8 @@ window.addEventListener('load',async()=>{
                     [...document.querySelectorAll('.post .speaker-eng')].forEach(elem=>{
                         elem.addEventListener('click',(event)=>{
                             event.preventDefault();
-                            const speechText = speechs[currentCategory][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["eng"];
-                            if(speechText) {
-                                const speechUttr = new SpeechSynthesisUtterance(speechText);
-                                speechUttr.voice = window.speechSynthesis.getVoices()[2];
-                                speechUttr.rate = 0.75;
-                                window.speechSynthesis.speak(speechUttr);
-                            }
+                            speechText(speechs[currentCategory][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["eng"],'en');
+
                         });
                         elem.addEventListener('mouseover',(event)=>{
                             event.target.src="../images/eng_speaker_glow.png";
@@ -197,13 +197,7 @@ window.addEventListener('load',async()=>{
                     [...document.querySelectorAll('.post .speaker-rus')].forEach(elem=>{
                         elem.addEventListener('click',(event)=>{
                             event.preventDefault();
-                            const speechText = speechs[currentCategory][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["rus"]
-                            if(speechText){
-                                const speechUttr = new SpeechSynthesisUtterance(speechText);
-                                speechUttr.voice = window.speechSynthesis.getVoices()[16];
-                                speechUttr.rate = 0.75;
-                                window.speechSynthesis.speak(speechUttr);
-                            }
+                            speechText(speechs[currentCategory][elem.parentElement.parentElement.parentElement.getAttribute('org-id')]["rus"],'ru');
                         });
                         elem.addEventListener('mouseover',(event)=>{
                             event.target.src="../images/rus_speaker_glow.png";
@@ -224,8 +218,14 @@ window.addEventListener('load',async()=>{
                     const speakerRus = document.createElement('img');
                     const speakerEng = document.createElement('img');
                     postBox.setAttribute('org-id',post._id);
+
+                    let newPhoneNumber = post.phones[0];
+                    if(post.phones[0].indexOf('+374 ') != -1)
+                        newPhoneNumber = '0' + post.phones[0].slice(post.phones[0].indexOf('+374 ')+5);
+
                     contactRow.classList.add('contact-row');
-                    contactRow.innerHTML = `<span><i class="fa fa-map-marker" style="font-size:24px;color:red;"></i> ${post.address}</span> <span><i class="fa fa-phone" style="font-size:24px;color:red;"></i> ${post.phones[0]}</span><span>`;
+                    contactRow.innerHTML = `<span class="text-size-change black-texted"><i class="fa fa-map-marker red-texted" style="font-size:24px;color:red;"></i> ${post.address}</span> <span class="text-size-change black-texted"><i class="fa fa-phone red-texted" style="font-size:24px;color:red;"></i> ${newPhoneNumber}</span><span>`;
+
                     speakerBox.classList.add('speaker-box');
                     speakerArm.src="../images/arm_speaker.png";
                     speakerArm.classList.add('speaker');
@@ -250,19 +250,29 @@ window.addEventListener('load',async()=>{
                     contactRow.innerHTML += "</span>";
                     name.setAttribute("org-id",post._id)
                     name.textContent = post.name;
+                    name.classList.add('text-size-change');
+                    name.classList.add('red-texted');
                     if(+post.price > 0){
                         switch(post.price){
                             case "20000" : name.innerHTML += ` <img src="../images/info-gold.png" width="16">`; break;
                             case "30000" : name.innerHTML += ` <img src="../images/info-green.png" width="16">`; break;
-                            case "45000" : name.innerHTML += ` <img src="../images/info-blue.jpg" width="16">`; break;
+                            case "45000" : name.innerHTML += ` <img src="../images/info-blue.png" width="16">`; break;
                         }
                     }
                     description.textContent = post.description;
+                    description.classList.add('text-size-change');
+                    description.classList.add('black-texted');
                     postBox.append(name);
                     postBox.append(description);
                     postBox.append(contactRow);
                     posts.append(postBox);
                 });
+                [...document.querySelectorAll('.text-size-change')].forEach(elem=>{
+                    elem.style.fontSize = "16px";
+                });
+                [...document.querySelectorAll('.black-texted'),
+                    ...document.querySelectorAll('.red-texted')]
+                    .forEach(elem => switchOnHCM(elem, isHCPModeOn));
                 singleClicks();
                 speakerArmClicks();
                 speakerEngClicks();
@@ -271,6 +281,7 @@ window.addEventListener('load',async()=>{
             }else{
                 const message = document.createElement("h3");
                 message.textContent = "Not have organizations yet.";
+                message.classList.add('red-texted');
                 posts.append(message);
                 document.querySelector('#counter').textContent = response.data.length;
             }
@@ -303,6 +314,47 @@ window.addEventListener('load',async()=>{
         });
     }
 
+    const setHighContrastMode = (change)=>{
+        const blueContent = document.querySelector('#blue-content');
+        const subcatsItems = [...document.querySelectorAll('#subcats li a')];
+        const priceInfos = document.querySelectorAll('#price-info p');
+        const menuItems = [...document.querySelectorAll('#menu .col1 a'),
+            ...document.querySelectorAll('#menu .col2 a'),
+            ...document.querySelectorAll('#menu .col3 a')];
+        const menu = document.querySelector('#menu');
+        if(window.localStorage.getItem('samvel_directory_user_token')){
+            const usernameSpan = document.querySelector('#usernameSpan');
+            usernameSpan.style.color = isHCPModeOn ? "yellow" : "white";
+        }
+        if(change){
+            document.body.style.backgroundColor = "black";
+            [...document.querySelectorAll('.black-texted')].forEach(elem=>{
+                elem.style.color = "white";
+            });
+            [...document.querySelectorAll('.red-texted')].forEach(elem=>{
+                elem.style.color = "yellow";
+            });
+            blueContent.style.backgroundColor = "yellow";
+            priceInfos.forEach(elem=>elem.style.color = "blue");
+            subcatsItems.forEach(elem=>elem.style.color="black");
+            menu.style.backgroundColor="black";
+            menuItems.forEach(elem=>{elem.style.color = "black"; elem.style.backgroundColor="yellow"});
+        }else{
+            document.body.style.backgroundColor = "white";
+            [...document.querySelectorAll('.black-texted')].forEach(elem=>{
+                elem.style.color = "black";
+            });
+            [...document.querySelectorAll('.red-texted')].forEach(elem=>{
+                elem.style.color = "red";
+            });
+            blueContent.style.backgroundColor = "powderblue";
+            priceInfos.forEach(elem=>elem.style.color = "red");
+            subcatsItems.forEach(elem=>elem.style.color="blue");
+            menu.style.backgroundColor="dodgerblue";
+            menuItems.forEach(elem=>{elem.style.color = "white"; elem.style.backgroundColor="blue"});
+        }
+    }
+
     document.querySelector('#search').addEventListener('click',()=>{
         const searchQuery = document.querySelector('input[name="search-query"]').value;
         window.localStorage.setItem('samvel_directory_search_query',searchQuery);
@@ -322,6 +374,29 @@ window.addEventListener('load',async()=>{
         elem.addEventListener('mouseover',(e)=>e.target.style.color="#FFA825");
         elem.addEventListener('mouseout',(e)=>e.target.style.color=currentColor);
     });
+    [...textSizeBox.children].forEach(elem=>{
+        elem.addEventListener('select',(e)=>e.preventDefault());
+    });
+
+    increaseButton.addEventListener('click',()=>{
+        [...document.querySelectorAll('.text-size-change')].forEach(elem=>{
+            const elemSize = elem.style.fontSize;
+            let sizeNumber = elemSize.slice(0,elemSize.indexOf("px"));
+            elem.style.fontSize = ++sizeNumber + "px";
+        })
+    });
+    decreaseButton.addEventListener('click',()=>{
+        [...document.querySelectorAll('.text-size-change')].forEach(elem=>{
+            const elemSize = elem.style.fontSize;
+            let sizeNumber = elemSize.slice(0,elemSize.indexOf("px"));
+            elem.style.fontSize = --sizeNumber + "px";
+        })
+    });
+
+    hcmSwitch.addEventListener('change',(e)=>{
+        isHCPModeOn = e.target.checked;
+        setHighContrastMode(isHCPModeOn);
+    });
 
     document.querySelector('#blog-link').addEventListener('click',(event)=>{
         event.preventDefault();
@@ -331,6 +406,9 @@ window.addEventListener('load',async()=>{
         else{
             window.location.href = "/views/login.html";
         }
+    });
+    [...document.querySelectorAll('.speech-elem')].forEach(elem=>{
+        speechTextByElement(elem);
     });
 
     getLocaleData().then(response=>{
@@ -355,7 +433,6 @@ window.addEventListener('load',async()=>{
             window.location.href = "search-result.html";
         });
     });
-
 
     await localeLangsSet();
 });

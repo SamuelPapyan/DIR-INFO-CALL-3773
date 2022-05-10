@@ -1,7 +1,6 @@
 import {getOneOrganization} from "../api/organization.js";
 import {createTag, getOneTag, updateTag} from "../api/tags.js";
 import {getLocaleData, setLanguageData} from "../api/localization.js";
-import {createComment, getAllComments} from "../api/comments.js";
 
 const weekDays = {
     monday:"Երկ",
@@ -28,8 +27,6 @@ function openCloseBool(start,end){
 
 window.addEventListener('load',async()=>{
     const orgId = window.localStorage.getItem('samvel_directory_current_org');
-    //const comments = document.querySelector('#comments');
-    //const commentInput = document.querySelector('textarea[name="comment"]');
     const localeLangsSet = async()=>{
         [...document.querySelectorAll('.locale')].forEach(elem=>{
             elem.addEventListener('click',async(e)=>{
@@ -69,7 +66,6 @@ window.addEventListener('load',async()=>{
         }else{
             document.querySelector('#email').parentElement.style.display = "none";
         }
-
 
         document.querySelector('#website').href = res.data.websiteUrl;
         document.querySelector('#website').setAttribute('target',"_blank");
@@ -229,5 +225,53 @@ window.addEventListener('load',async()=>{
             window.location.href = "/views/login.html";
         }
     });
+
+    const hcmToogle = document.querySelector('#hcm-switch');
+
+    const setHighContrastMode = (change)=>{
+        const menuItems = [...document.querySelectorAll('#menu .col1 a'),
+            ...document.querySelectorAll('#menu .col2 a'),
+            ...document.querySelectorAll('#menu .col3 a')];
+        const menu = document.querySelector('#menu');
+        const column1 = document.querySelector('#content .col1');
+        const activities = document.querySelector('#activities');
+        if(window.localStorage.getItem('samvel_directory_user_token')){
+            const usernameSpan = document.querySelector('#usernameSpan');
+            usernameSpan.style.color = change ? "yellow" : "white";
+        }
+        column1.style.backgroundColor = change ? "yellow" : "powderblue";
+        activities.style.backgroundColor = change ? "yellow" : "#dde9db";
+        if(change){
+            document.body.style.backgroundColor = "black";
+            [...document.querySelectorAll('.black-texted')].forEach(elem=>{
+                elem.style.color = "white";
+            });
+            [...document.querySelectorAll('.red-texted')].forEach(elem=>{
+                elem.style.color = "yellow";
+            });
+            [...document.querySelectorAll('.link-texted')].forEach(elem=>{
+                elem.style.color = "yellow";
+            });
+            menu.style.backgroundColor="black";
+            menuItems.forEach(elem=>{elem.style.color = "black"; elem.style.backgroundColor="yellow"});
+        }else{
+            document.body.style.backgroundColor = "white";
+            [...document.querySelectorAll('.black-texted')].forEach(elem=>{
+                elem.style.color = "black";
+            });
+            [...document.querySelectorAll('.red-texted')].forEach(elem=>{
+                elem.style.color = "red";
+            });
+            [...document.querySelectorAll('.link-texted')].forEach(elem=>{
+                elem.style.color = "dodgerblue";
+            });
+            menu.style.backgroundColor="dodgerblue";
+            menuItems.forEach(elem=>{elem.style.color = "white"; elem.style.backgroundColor="blue"});
+        }
+    }
+    hcmToogle.addEventListener('change',(e)=>{
+        setHighContrastMode(e.target.checked);
+    });
+
     await localeLangsSet();
 });

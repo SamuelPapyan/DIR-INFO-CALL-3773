@@ -3,10 +3,9 @@
     margin-left:700px;
     width:600px;
     padding:10px;
-    background-color: rgba(255,255,255,0.6);
 }
 body{
-    background-image:url('../images/login.jpg');
+    background-image:url('../images/login.png');
     background-repeat:no-repeat;
     background-size:45%;
     background-position-y: 150px;

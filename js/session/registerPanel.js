@@ -24,7 +24,7 @@ window.addEventListener('load',()=>{
                 event.preventDefault();
                 window.localStorage.removeItem('samvel_directory_user_token');
                 window.location.reload();
-            })
+            });
         });
     }
 });

@@ -9,6 +9,7 @@ window.addEventListener('load',async()=>{
     const company = document.querySelector('input[name="company"]');
     const sendButton = document.querySelector('#send');
     const validationLabel = document.querySelector('#validation-label');
+    const hcmSwitch = document.querySelector('#hcm-switch');
     const localeLangsSet = async()=>{
         [...document.querySelectorAll('.locale')].forEach(elem=>{
             elem.addEventListener('click',async(e)=>{
@@ -19,6 +20,41 @@ window.addEventListener('load',async()=>{
                 }
             })
         });
+    }
+    const setHighContrastMode = (change)=>{
+        const menuItems = [...document.querySelectorAll('#menu .col1 a'),
+            ...document.querySelectorAll('#menu .col2 a'),
+            ...document.querySelectorAll('#menu .col3 a')];
+        const menu = document.querySelector('#menu');
+        if(window.localStorage.getItem('samvel_directory_user_token')){
+            const usernameSpan = document.querySelector('#usernameSpan');
+            usernameSpan.style.color = change ? "yellow" : "white";
+        }
+        if(change){
+            document.body.style.backgroundColor = "black";
+            [...document.querySelectorAll('.black-texted')].forEach(elem=>{
+                elem.style.color = "white";
+            });
+            [...document.querySelectorAll('.blue-texted')].forEach(elem=>{
+                elem.style.color = "yellow";
+            });
+            sendButton.style.color = "black";
+            sendButton.style.backgroundColor= "yellow";
+            menu.style.backgroundColor="black";
+            menuItems.forEach(elem=>{elem.style.color = "black"; elem.style.backgroundColor="yellow"});
+        }else{
+            document.body.style.backgroundColor = "white";
+            [...document.querySelectorAll('.black-texted')].forEach(elem=>{
+                elem.style.color = "black";
+            });
+            [...document.querySelectorAll('.blue-texted')].forEach(elem=>{
+                elem.style.color = "red";
+            });
+            sendButton.style.color = "white";
+            sendButton.style.backgroundColor= "blue";
+            menu.style.backgroundColor="dodgerblue";
+            menuItems.forEach(elem=>{elem.style.color = "white"; elem.style.backgroundColor="blue"});
+        }
     }
     sendButton.addEventListener('click',()=>{
         if(name.value.length > 0 && email.value.length > 0){
@@ -57,5 +93,8 @@ window.addEventListener('load',async()=>{
             window.location.href = "/views/login.html";
         }
     });
+    hcmSwitch.addEventListener('change',(e)=>{
+        setHighContrastMode(e.target.checked);
+    })
     await localeLangsSet();
 });

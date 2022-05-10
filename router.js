@@ -10,4 +10,5 @@ module.exports = (app)=>{
     app.use('/admin',require('./routes/admin'));
     app.use('/user_actions',require('./routes/user_actions'));
     app.use('/categories',require('./routes/categories'));
+    app.use('/translate', require('./routes/translate'));
 }

@@ -4,5 +4,6 @@
   "createOrg": "Создать Организацию",
   "about_us_info": "about_us_ru.PNG",
   "lang":"ru-RU",
-  "searchOrganization": "Найти организацию"
+  "searchOrganization": "Найти организацию",
+  "translate-lang": "ru"
 }

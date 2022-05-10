@@ -15,6 +15,7 @@
     <title>Phone Codes</title>
     <link rel="stylesheet" href="../css/layout.css" type="text/css">
     <link rel="stylesheet" href="../css/organization-create.css" type="text/css">
+    <link rel="stylesheet" href="../css/hcm_switch.css" type="text/css">
     <script type="module" src="../js/session/registerPanel.js"></script>
     <script type="module" src="../js/pages/organization-create.js"></script>
     <link rel="icon" href="../images/DIR_INFO_CALL_LOGO_V2.PNG" type="image/png" size="16x16">
@@ -47,66 +48,69 @@
         <a id="loginUrl" href="/views/login.html">Login</a>
         <a href="/views/register.html">Sign Up</a>
     </div>
-
+    <label id="hcm-switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
 </div>
 <div id="create-box">
     <div id="create-org-0">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmUcQKTTovrNJgGoKoQt1FtQzkCxUAZureeLNYjjMxukEwuvk&s" alt="">
+        <img src="../images/create_organization.png" alt="">
     </div>
     <h2 id="localize-createOrg"></h2>
     <div id="create-org-1">
         <div class="col1">
-            <label>Organization name: </label><br>
+            <label class="main-label">Organization name: </label><br>
             <input type="text" name="orgName"><br>
-            <label>Category: </label><br>
+            <label class="main-label">Category: </label><br>
             <input type="text" name="category"><br>
-            <label>Subcategory: </label><br>
+            <label class="main-label">Subcategory: </label><br>
             <input type="text" name="subcategory"><br>
-            <label>Organization logo: </label><br>
+            <label class="main-label">Organization logo: </label><br>
             <input type="file" name="orgLogo"><br>
-            <label style="margin-top:11px;">Director: </label><br>
+            <label class="main-label" style="margin-top:11px;">Director: </label><br>
             <input type="text" name="director"><br>
-            <label>Address: </label><br>
+            <label class="main-label">Address: </label><br>
             <input type="text" name="address"><br>
-            <label>Phones: </label><br>
+            <label class="main-label">Phones: </label><br>
             <input type="text" name="phone"><br>
             <input type="text" name="phone-2"><br>
             <input type="text" name="phone-3"><br>
             <input type="text" name="phone-4"><br>
         </div>
         <div class="col2">
-            <label>FAX: </label><br>
+            <label class="main-label">FAX: </label><br>
             <input type="text" name="fax"><br>
-            <label>Email: </label><br>
-            <input type="text" name="email"><br>
-            <label>Website URL: </label><br>
+            <label class="main-label">Email: </label><br>
+            <input class="main-label" type="text" name="email"><br>
+            <label class="main-label">Website URL: </label><br>
             <input type="text" name="website-url"><br>
-            <label>Short Link: </label><br>
+            <label class="main-label">Short Link: </label><br>
             <input type="text" name="short-link"><br>
-            <label>Facebook URL: </label><br>
+            <label class="main-label">Facebook URL: </label><br>
             <input type="text" name="facebook-url"><br>
-            <label>Twitter URL: </label><br>
+            <label class="main-label">Twitter URL: </label><br>
             <input type="text" name="twitter-url"><br>
-            <label>Instagram URL: </label><br>
+            <label class="main-label">Instagram URL: </label><br>
             <input type="text" name="instagram-url"><br>
-            <input type="checkbox" name="has-link"><label>Has Link?</label><br>
+            <input type="checkbox" name="has-link"><label class="main-label">Has Link?</label><br>
         </div>
     </div>
     <div id="create-org-2">
         <div class="col1">
-            <label>Photos: </label><br>
+            <label class="main-label">Photos: </label><br>
             <input type="text" class="photo"><br>
             <input type="text" class="photo"><br>
             <input type="text" class="photo"><br>
             <input type="text" class="photo"><br>
             <input type="text" class="photo"><br>
-            <label>Video Link:</label><br>
+            <label class="main-label">Video Link:</label><br>
             <input type="text" name="video"><br>
-            <label>Map: </label><br>
+            <label class="main-label">Map: </label><br>
             <input type="text" name="map"><br>
-            <label>Year of foundation: </label><br>
+            <label class="main-label">Year of foundation: </label><br>
             <input type="text" name="foundationYear"><br>
-            <label>Employees: </label><br>
+            <label class="main-label">Employees: </label><br>
             <select name="employees">
                 <option value="1-16">1-16</option>
                 <option value="25-75">25-75</option>
@@ -115,7 +119,7 @@
             </select>
         </div>
         <div class="col2">
-            <label>Working Days: </label><br>
+            <label class="main-label">Working Days: </label><br>
             <div id="working-days">
                 <input type="checkbox" value="monday"><span>Monday</span><br>
                 <input type="checkbox" value="tuesday"><span>Tuesday</span><br>
@@ -131,17 +135,17 @@
                     <option value="45000">45000</option>
                 </select>
             </div>
-            <label>Working Time</label><br>
+            <label class="main-label">Working Time</label><br>
             <input type="time" name="start-time"> - <input type="time" name="end-time"><br>
         </div>
     </div>
     <div id="create-org-3">
         <div class="col1">
-            <label>Organization Description: </label><br>
+            <label class="main-label">Organization Description: </label><br>
             <textarea name="description"></textarea>
         </div>
         <div class="col2">
-            <label style="margin-top:6px;">More: </label><br>
+            <label class="main-label" style="margin-top:6px;">More: </label><br>
             <textarea name="more" min-width="300" min-height="200"></textarea>
         </div>
     </div>

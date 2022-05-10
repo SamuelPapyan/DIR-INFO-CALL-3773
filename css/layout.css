@@ -15,12 +15,12 @@
     width:65px;
 }
 #logo{
-    margin-right:90px;
+    margin-right:45px;
     position:relative;
     top:-15px;
 }
 #menu .col1{
-    margin-right:100px;
+    margin-right:50px;
 }
 #menu .col2{
     margin-right:30px;
@@ -121,4 +121,8 @@
     font-weight:bold;
     font-size:16px;
     margin-right:10px;
+}
+
+#loginUrl{
+    margin-left:50px;
 }

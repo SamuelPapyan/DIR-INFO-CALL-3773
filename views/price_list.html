@@ -13,6 +13,7 @@
     <title>Price List</title>
     <link rel="stylesheet" href="../css/layout.css" type="text/css">
     <link rel="stylesheet" href="../css/price_list.css" type="text/css">
+    <link rel="stylesheet" href="../css/hcm_switch.css" type="text/css">
     <script type="module" src="../js/session/registerPanel.js"></script>
     <style>
         #container p{
@@ -38,6 +39,42 @@
                     window.location.href = "/views/login.html";
                 }
             });
+            const hcmToogle = document.querySelector('#hcm-switch');
+
+            const setHighContrastMode = (change)=>{
+                const menuItems = [...document.querySelectorAll('#menu .col1 a'),
+                    ...document.querySelectorAll('#menu .col2 a'),
+                    ...document.querySelectorAll('#menu .col3 a')];
+                const menu = document.querySelector('#menu');
+                if(window.localStorage.getItem('samvel_directory_user_token')){
+                    const usernameSpan = document.querySelector('#usernameSpan');
+                    usernameSpan.style.color = change ? "yellow" : "white";
+                }
+                if(change){
+                    document.body.style.backgroundColor = "black";
+                    [...document.querySelectorAll('.black-texted')].forEach(elem=>{
+                        elem.style.color = "white";
+                    });
+                    [...document.querySelectorAll('.red-texted')].forEach(elem=>{
+                        elem.style.color = "yellow";
+                    });
+                    menu.style.backgroundColor="black";
+                    menuItems.forEach(elem=>{elem.style.color = "black"; elem.style.backgroundColor="yellow"});
+                }else{
+                    document.body.style.backgroundColor = "white";
+                    [...document.querySelectorAll('.black-texted')].forEach(elem=>{
+                        elem.style.color = "black";
+                    });
+                    [...document.querySelectorAll('.red-texted')].forEach(elem=>{
+                        elem.style.color = "red";
+                    });
+                    menu.style.backgroundColor="dodgerblue";
+                    menuItems.forEach(elem=>{elem.style.color = "white"; elem.style.backgroundColor="blue"});
+                }
+            }
+            hcmToogle.addEventListener('change',(e)=>{
+                setHighContrastMode(e.target.checked);
+            })
         });
     </script>
     <link rel="icon" href="../images/DIR_INFO_CALL_LOGO_V2.PNG" type="image/png" size="16x16">
@@ -70,7 +107,10 @@
         <a id="loginUrl" href="/views/login.html">Login</a>
         <a href="/views/register.html">Sign Up</a>
     </div>
-
+    <label id="hcm-switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
 </div>
 <div id="container">
     <img src="../images/price_list_4.png" alt="">

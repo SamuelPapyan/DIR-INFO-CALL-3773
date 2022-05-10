@@ -13,6 +13,13 @@ window.addEventListener('load',async()=>{
     const searchInput = document.querySelector('input[name="search-query"]');
     const voiceButton = document.querySelector('#voiceRecorder');
     const searchQuery = window.localStorage.getItem('samvel_directory_search_query');
+    const searchQuantity = document.querySelector('#search-results-no');
+
+    const increaseButton = document.querySelector('#increase-button');
+    const decreaseButton = document.querySelector('#decrease-button');
+    const hcmSwitch = document.querySelector('#hcm-switch input');
+
+    let isHCPModeOn = false;
 
     const searchListener = () =>{
         const searchQuery = document.querySelector('input[name="search-query"]').value;
@@ -113,7 +120,7 @@ window.addEventListener('load',async()=>{
                     const speakerEng = document.createElement('img');
                     postBox.setAttribute('org-id',post._id);
                     contactRow.classList.add('contact-row');
-                    contactRow.innerHTML = `<span><i class="fa fa-map-marker" style="font-size:24px;color:red;"></i> ${post.address}</span> <span><i class="fa fa-phone" style="font-size:24px;color:red;"></i> ${post.phones[0]}</span><span>`;
+                    contactRow.innerHTML = `<span class="text-size-change black-texted"><i class="fa fa-map-marker red-texted" style="font-size:24px;color:red;"></i> ${post.address}</span> <span class="text-size-change black-texted"><i class="fa fa-phone red-texted" style="font-size:24px;color:red;"></i> ${post.phones[0]}</span><span>`;
                     speakerBox.classList.add('speaker-box');
                     speakerArm.src="../images/arm_speaker.png";
                     speakerArm.classList.add('speaker');
@@ -140,6 +147,8 @@ window.addEventListener('load',async()=>{
                     contactRow.innerHTML += "</span>";
                     name.setAttribute("org-id",post._id)
                     name.textContent = post.name;
+                    name.classList.add('text-size-change');
+                    name.classList.add('red-texted');
                     if(+post.price > 0){
                         switch(post.price){
                             case "20000" : name.innerHTML += ` <img src="../images/info-gold.png" width="16">`; break;
@@ -148,11 +157,17 @@ window.addEventListener('load',async()=>{
                         }
                     }
                     description.textContent = post.description;
+                    description.classList.add('text-size-change');
+                    description.classList.add('black-texted');
                     postBox.append(name);
                     postBox.append(description);
                     postBox.append(contactRow);
                     posts.append(postBox);
                 });
+                [...document.querySelectorAll('.text-size-change')].forEach(elem=>{
+                    elem.style.fontSize = "16px";
+                });
+                searchQuantity.innerText = response.data.length;
                 singleClicks();
                 speakerArmClicks();
                 speakerEngClicks();
@@ -261,8 +276,14 @@ window.addEventListener('load',async()=>{
                     const speakerRus = document.createElement('img');
                     const speakerEng = document.createElement('img');
                     postBox.setAttribute('org-id',post._id);
+
+                    let newPhoneNumber = post.phones[0];
+                    if(post.phones[0].indexOf('+374 ') != -1)
+                        newPhoneNumber = '0' + post.phones[0].slice(post.phones[0].indexOf('+374 ')+5);
+
                     contactRow.classList.add('contact-row');
-                    contactRow.innerHTML = `<span><i class="fa fa-map-marker" style="font-size:24px;color:red;"></i> ${post.address}</span> <span><i class="fa fa-phone" style="font-size:24px;color:red;"></i> ${post.phones[0]}</span><span>`;
+                    contactRow.innerHTML = `<span><i class="fa fa-map-marker" style="font-size:24px;color:red;"></i> ${post.address}</span> <span><i class="fa fa-phone" style="font-size:24px;color:red;"></i> ${newPhoneNumber}</span><span>`;
+
                     speakerBox.classList.add('speaker-box');
                     speakerArm.src="../images/arm_speaker.png";
                     speakerArm.classList.add('speaker');
@@ -291,7 +312,7 @@ window.addEventListener('load',async()=>{
                         switch(post.price){
                             case "20000" : name.innerHTML += ` <img src="../images/info-gold.png" width="16">`; break;
                             case "30000" : name.innerHTML += ` <img src="../images/info-green.png" width="16">`; break;
-                            case "45000" : name.innerHTML += ` <img src="../images/info-blue.jpg" width="16">`; break;
+                            case "45000" : name.innerHTML += ` <img src="../images/info-blue.png" width="16">`; break;
                         }
                     }
                     description.textContent = post.description;
@@ -335,6 +356,38 @@ window.addEventListener('load',async()=>{
         });
     }
 
+    const setHighContrastMode = (change)=>{
+        const menuItems = [...document.querySelectorAll('#menu .col1 a'),
+            ...document.querySelectorAll('#menu .col2 a'),
+            ...document.querySelectorAll('#menu .col3 a')];
+        const menu = document.querySelector('#menu');
+        if(window.localStorage.getItem('samvel_directory_user_token')){
+            const usernameSpan = document.querySelector('#usernameSpan');
+            usernameSpan.style.color = change ? "yellow" : "white";
+        }
+        if(change){
+            document.body.style.backgroundColor = "black";
+            [...document.querySelectorAll('.black-texted')].forEach(elem=>{
+                elem.style.color = "white";
+            });
+            [...document.querySelectorAll('.red-texted')].forEach(elem=>{
+                elem.style.color = "yellow";
+            });
+            menu.style.backgroundColor="black";
+            menuItems.forEach(elem=>{elem.style.color = "black"; elem.style.backgroundColor="yellow"});
+        }else{
+            document.body.style.backgroundColor = "white";
+            [...document.querySelectorAll('.black-texted')].forEach(elem=>{
+                elem.style.color = "black";
+            });
+            [...document.querySelectorAll('.red-texted')].forEach(elem=>{
+                elem.style.color = "red";
+            });
+            menu.style.backgroundColor="dodgerblue";
+            menuItems.forEach(elem=>{elem.style.color = "white"; elem.style.backgroundColor="blue"});
+        }
+    }
+
     [...document.querySelectorAll('.has-sound')].forEach(elem=>{
         elem.addEventListener('mouseover',playSound);
     });
@@ -347,6 +400,25 @@ window.addEventListener('load',async()=>{
         const currentColor = elem.style.color;
         elem.addEventListener('mouseover',(e)=>e.target.style.color="#FFA825");
         elem.addEventListener('mouseout',(e)=>e.target.style.color=currentColor);
+    });
+
+    increaseButton.addEventListener('click',()=>{
+        [...document.querySelectorAll('.text-size-change')].forEach(elem=>{
+            const elemSize = elem.style.fontSize;
+            let sizeNumber = elemSize.slice(0,elemSize.indexOf("px"));
+            elem.style.fontSize = ++sizeNumber + "px";
+        })
+    });
+    decreaseButton.addEventListener('click',()=>{
+        [...document.querySelectorAll('.text-size-change')].forEach(elem=>{
+            const elemSize = elem.style.fontSize;
+            let sizeNumber = elemSize.slice(0,elemSize.indexOf("px"));
+            elem.style.fontSize = --sizeNumber + "px";
+        })
+    });
+    hcmSwitch.addEventListener('change',(e)=>{
+        isHCPModeOn = e.target.checked;
+        setHighContrastMode(isHCPModeOn);
     });
 
     getLocaleData().then(res=>{

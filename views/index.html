@@ -12,44 +12,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/layout.css" type="text/css">
     <link rel="stylesheet" href="../css/index.css" type="text/css">
+    <link rel="stylesheet" href="../css/hcm_switch_index.css" type="text/css">
     <link rel="icon" href="../images/DIR_INFO_CALL_LOGO_V2.PNG" type="image/png" size="16x16">
 </head>
 <body>
 <div id="main">
     <div id="container">
+        <button id="soundMuter">
+            <i class="fa fa-volume-up yellow-hover"></i>
+        </button>
         <div class="row1">
             <div class="col1">
                 <div id="menubar">
-                    <a href="/views/about_1.html" class="red-click yellow-hover bold">About Us</a>
-                    <a href="/views/send-mail.html" class="red-click yellow-hover bold">Contact Us</a>
+                    <a href="/views/about_1.html" id="aboutus" class="red-click yellow-hover bold">About Us</a>
+                    <a href="/views/send-mail.html" id="contactus" class="red-click yellow-hover bold">Contact Us</a>
                     <a href="/views/categories.html" id="catsToogle" class="red-click yellow-hover bold">Categories</a>
-                    <a href="/views/price_list.html" class="red-click yellow-hover bold">Price List</a>
+                    <a href="/views/price_list.html" id="pricelist" class="red-click yellow-hover bold">Price List</a>
                     <a href="/views/blog.html" id="blog-link" class="red-click yellow-hover bold">Blog</a>
                 </div>
                 <br>
-                <img src="../images/call_us_3.png" id="callUs" alt="">
             </div>
             <div class="col2">
                 <a id="loginUrl" href="/views/login.html" class="has-sound red-click yellow-hover bold" style="width:60px;text-align:center;">Login</a>
                 <a id="signUpUrl" href="/views/register.html" class="has-sound red-click yellow-hover bold" style="margin-left:10px;text-align:center;;">Sign Up</a><br>
-                <a href="/views/organization-create.html" class="has-sound red-click yellow-hover bold" style="margin-right:7px;">New Organization</a><br>
+                <a id="new-organization" href="/views/organization-create.html" class="has-sound red-click yellow-hover bold" style="margin-right:7px;">New Organization</a><br>
             </div>
             <div class="col3">
                 <div style="display:flex; justify-content: space-around;">
-                    <ul>
+                    <ul id="locale-tab">
                         <li>
-                            <a href="#" class="locale" locale-lang="hy_AM">Հայ <img src="https://img5.goodfon.ru/wallpaper/nbig/6/43/armenia-flag-armenian-armenian-flag-flag-of-armenia-republic.jpg" alt="arm_lang"></a>
+                            <a href="#" class="locale" id="arm-lang" locale-lang="hy_AM">Հայ <img src="https://img5.goodfon.ru/wallpaper/nbig/6/43/armenia-flag-armenian-armenian-flag-flag-of-armenia-republic.jpg" alt="arm_lang"></a>
                         </li>
                         <li>
-                            <a href="#" class="locale" locale-lang="en_US">Eng <img src="https://tekinfarmed.com/images/en.png" alt="eng_lang"></a>
+                            <a href="#" class="locale" id="eng-lang" locale-lang="en_US">Eng <img src="https://tekinfarmed.com/images/en.png" alt="eng_lang"></a>
                         </li>
                         <li>
-                            <a href="#" class="locale" locale-lang="ru_RU">Рус <img src="https://practicalfunctionalassessment.files.wordpress.com/2020/12/russian-flag-russian-flag-russia-flag-of-russia.jpg" alt="rus_lang"></a>
+                            <a href="#" class="locale" id="rus-lang" locale-lang="ru_RU">Рус <img src="https://practicalfunctionalassessment.files.wordpress.com/2020/12/russian-flag-russian-flag-russia-flag-of-russia.jpg" alt="rus_lang"></a>
                         </li>
                     </ul>
                 </div>
             </div>
+            <label id="hcm-switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
         </div>
+        <img src="../images/call_us_3.png" id="callUs" alt="">
         <div class="row2">
             <div class="col1">
                 <div id="hot-line">
@@ -69,20 +77,20 @@
             </div>
             <div class="col3">
                 <div id="services">
-                    <a target="_blank" href="https://hotel.am/am/"><img src="../images/hotel.png" alt=""></a><br><br>
+                    <a target="_blank" href="https://hotel.am/am/"><img src="../images/hotel.png" alt="" id="hotels"></a><br><br>
                     <div style="clear:right;display:flex;flex-direction:row-reverse;">
-                        <a target="_blank" href="https://www.yerevan.am/am/staff/"><img class="triggered-link" src="../images/yerevan.jpg" alt="" style="width:95px;height:60px;"></a><br><br>
-                        <a target="_blank" href="https://www.gov.am/am/staff-structure/"><img class="triggered-link" src="../images/gover_2.jpg" alt="" style="width:95px;height:60px;margin-right:5px;"></a><br><br>
+                        <a target="_blank" href="https://www.yerevan.am/am/staff/"><img class="triggered-link reflex-link" id="yerevan" src="../images/yerevan.png" alt="" style="width:95px;height:60px;"></a><br><br>
+                        <a target="_blank" href="https://www.gov.am/am/staff-structure/"><img class="triggered-link reflex-link" id="gover" src="../images/gover_2.png" alt="" style="width:95px;height:60px;margin-right:5px;"></a><br><br>
                     </div>
-                    <a target="_blank"  href="https://pharmacy.am/?inc=allp&lng=am"><img src="../images/pharmacy.png" class="triggered-link" alt=""style="width:190px;height:60px;background-color:white;"></a><br><br>
-                    <a target="_blank"  href="https://www.doctor911.am/hospitals"><img src="../images/doctor911.png" class="triggered-link" alt="" style="width:190px;height:60px;background-color:white;" ></a><br><br>
+                    <a target="_blank"  href="https://pharmacy.am/?inc=allp&lng=am"><img id="pharmacies" src="../images/pharmacy.png" class="triggered-link reflex-link" alt=""style="width:190px;height:60px;"></a><br><br>
+                    <a target="_blank"  href="https://www.doctor911.am/hospitals"><img id="doctor911" src="../images/doctor911.png" class="triggered-link reflex-link" alt="" style="width:190px;height:60px;" ></a><br><br>
                     <div style="clear:right;display:flex;flex-direction:row-reverse;">
-                        <a href="/views/mailIndexes.html"><img class="triggered-link" src="../images/mail_index.png" alt="" style="width:95px;height:60px;"></a><br><br>
-                        <a target="_blank" href="https://www.embassy.am/am/"><img class="triggered-link" src="../images/embassy.png" alt="" style="width:95px;height:60px;margin-right:5px;"></a><br><br>
+                        <a href="/views/mailIndexes.html"><img class="triggered-link reflex-link" id="mailIndexes" src="../images/mail_index.png" alt="" style="width:95px;height:60px;"></a><br><br>
+                        <a target="_blank" href="https://www.embassy.am/am/"><img class="triggered-link reflex-link" id="embassy" src="../images/embassy.png" alt="" style="width:95px;height:60px;margin-right:5px;"></a><br><br>
                     </div>
                     <div id="world-phones">
                         <a href="/views/codes.html">
-                            <img src="../images/world-phones-2_1.png" alt="" id="world-phones-img">
+                            <img src="../images/world-phones-2_1.png" id="worldPhones" alt="" id="world-phones-img">
                         </a>
                     </div>
                 </div>

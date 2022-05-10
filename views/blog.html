@@ -15,20 +15,9 @@
     <title>Phone Codes</title>
     <link rel="stylesheet" href="../css/layout.css" type="text/css">
     <link rel="stylesheet" href="../css/blog.css" type="text/css">
+    <link rel="stylesheet" href="../css/hcm_switch.css" type="text/css">
     <script async type="module" src="../js/session/registerPanel.js"></script>
-    <script>
-        window.addEventListener('load',async()=>{
-            document.querySelector('#blog-link').addEventListener('click',(event)=>{
-                event.preventDefault();
-                if(window.localStorage.getItem('samvel_directory_user_token')){
-                    window.location.href = "/views/blog.html";
-                }
-                else{
-                    window.location.href = "/views/login.html";
-                }
-            });
-        });
-    </script>
+    <script src="../js/pages/blog.js" type="module"></script>
     <link rel="icon" href="../images/DIR_INFO_CALL_LOGO_V2.PNG" type="image/png" size="16x16">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -60,8 +49,11 @@
         <a id="loginUrl" href="/views/login.html">Login</a>
         <a href="/views/register.html">Sign Up</a>
     </div>
+    <label id="hcm-switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
 </div>
-<!--<iframe id="myiframe" src="http://dir-info-call-blog.simplesite.com/" width="100%" height="3900" frameborder="0" scrolling="no"></iframe>-->
 
 <div class="container2">
     <video autoplay muted loop id="videoBackground">

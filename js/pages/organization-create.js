@@ -97,6 +97,55 @@ window.addEventListener('load',async()=>{
             }
         });
     });
+
+    const hcmToogle = document.querySelector('#hcm-switch');
+
+    const setHighContrastMode = (change)=>{
+        const menuItems = [...document.querySelectorAll('#menu .col1 a'),
+            ...document.querySelectorAll('#menu .col2 a'),
+            ...document.querySelectorAll('#menu .col3 a')];
+        const menu = document.querySelector('#menu');
+        const mainLabels = [...document.querySelectorAll('.main-label')];
+        const weekDaysLabels = [...document.querySelectorAll('#working-days span')];
+        const heading = document.querySelector('#localize-createOrg');
+        if(window.localStorage.getItem('samvel_directory_user_token')){
+            const usernameSpan = document.querySelector('#usernameSpan');
+            usernameSpan.style.color = change ? "yellow" : "white";
+        }
+        [heading, ...mainLabels].forEach(elem=>{
+            elem.style.color = change ? "yellow" : "blue";
+        });
+        weekDaysLabels.forEach(elem=>{
+            elem.style.color = change ? "white" : "black";
+        })
+        button.style.color = change ? "black" : "white";
+        button.style.backgroundColor = change ? "yellow" : "blue";
+        if(change){
+            document.body.style.backgroundColor = "black";
+            [...document.querySelectorAll('.black-texted')].forEach(elem=>{
+                elem.style.color = "white";
+            });
+            [...document.querySelectorAll('.red-texted')].forEach(elem=>{
+                elem.style.color = "yellow";
+            });
+            menu.style.backgroundColor="black";
+            menuItems.forEach(elem=>{elem.style.color = "black"; elem.style.backgroundColor="yellow"});
+        }else{
+            document.body.style.backgroundColor = "white";
+            [...document.querySelectorAll('.black-texted')].forEach(elem=>{
+                elem.style.color = "black";
+            });
+            [...document.querySelectorAll('.red-texted')].forEach(elem=>{
+                elem.style.color = "red";
+            });
+            menu.style.backgroundColor="dodgerblue";
+            menuItems.forEach(elem=>{elem.style.color = "white"; elem.style.backgroundColor="blue"});
+        }
+    }
+    hcmToogle.addEventListener('change',(e)=>{
+        setHighContrastMode(e.target.checked);
+    });
+
     getLocaleData().then(response=>{
         if(response.success){
             document.querySelector('#localize-createOrg').textContent = response.data.createOrg
@@ -114,5 +163,8 @@ window.addEventListener('load',async()=>{
             window.location.href = "/views/login.html";
         }
     });
+
+
+
     await localeLangsSet();
 });

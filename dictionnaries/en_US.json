@@ -4,5 +4,6 @@
   "createOrg": "Create Organization",
   "about_us_info": "about_us_en.PNG",
   "lang": "en-US",
-  "searchOrganization": "Search organization"
+  "searchOrganization": "Search organization",
+  "translate-lang": "en"
 }

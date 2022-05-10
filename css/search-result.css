@@ -1,0 +1,13 @@
+#searches-quantity{
+    display:inline-block;
+    margin-left:250px;
+    text-transform: uppercase;
+    color:red;
+    font-size:24px;
+}
+#text-size-box{
+    font-size:30px;
+    position:relative;
+    top:5px;
+    left:30px;
+}

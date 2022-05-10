@@ -10,15 +10,16 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-
     <!-- Style -->
-
     <link rel="stylesheet" href="../css/layout.css" type="text/css">
     <link rel="stylesheet" href="../css/category.css" type="text/css">
+    <link rel="stylesheet" href="../css/search-result.css" type="text/css">
+    <link rel="stylesheet" href="../css/hcm_switch.css" type="text/css">
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=qMAhANnh"></script>
     <script type="module" src="../js/pages/search-result.js"></script>
     <script type="module" src="../js/session/registerPanel.js"></script>
     <link rel="stylesheet" href="../css/category_beta.css" type="text/css">
-    <title>Category - 1</title>
+    <title>Loading...</title>
     <style>
         #subcats{
             font-size:12px;
@@ -102,21 +103,30 @@
         </a>
     </div>
     <div class="col2">
-        <a href="#" class="locale" locale-lang="hy_AM">Հայ</a> <!--<img src="https://img5.goodfon.ru/wallpaper/nbig/6/43/armenia-flag-armenian-armenian-flag-flag-of-armenia-republic.jpg" alt="arm_lang">-->
-        <a href="#" class="locale" locale-lang="en_US">Eng</a> <!--<img src="https://tekinfarmed.com/images/en.png" alt="eng_lang">-->
-        <a href="#" class="locale" locale-lang="ru_RU">Рус</a> <!--<img src="https://practicalfunctionalassessment.files.wordpress.com/2020/12/russian-flag-russian-flag-russia-flag-of-russia.jpg" alt="rus_lang">-->
+        <a href="#" class="locale" locale-lang="hy_AM">Հայ</a>
+        <a href="#" class="locale" locale-lang="en_US">Eng</a>
+        <a href="#" class="locale" locale-lang="ru_RU">Рус</a>
     </div>
     <div class="col3">
         <a id="loginUrl" href="/views/login.html">Login</a>
         <a href="/views/register.html">Sign Up</a>
     </div>
-
+    <label id="hcm-switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
 </div>
 <div id="container">
     <div id="search-box">
         <input type="text" name="search-query">
         <button id="search"><i class="fa fa-search yellow-hover red-click has-sound"></i></button>
         <button id="voiceRecorder"><i class="fa fa-microphone yellow-hover has-sound"></i></button>
+        <b id="text-size-box">
+            <span class="black-texted" id="decrease-button"/>-</span>
+            <span class="red-texted" id="text-size-letter">A</span>
+            <span class="black-texted" id="increase-button">+</span>
+        </b>
+        <b><p id="searches-quantity" class="red-texted">Կազմակերպություններ։ <span id="search-results-no">0</span></p></b>
     </div>
     <div id="organizations">
 

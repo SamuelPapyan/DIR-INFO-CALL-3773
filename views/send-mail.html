@@ -15,6 +15,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="../css/contact_us.css">
     <link rel="stylesheet" href="../css/layout.css" type="text/css">
+    <link rel="stylesheet" href="../css/hcm_switch.css" type="text/css">
     <script type="module" src="../js/session/registerPanel.js"></script>
     <script type="module" src="../js/pages/send-mail.js"></script>
     <title>Contact Us</title>
@@ -48,7 +49,10 @@
         <a id="loginUrl" href="/views/login.html">Login</a>
         <a href="/views/register.html">Sign Up</a>
     </div>
-
+    <label id="hcm-switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
 </div>
 <div class="content">
 
@@ -59,33 +63,33 @@
         <div class="row align-items-stretch  contact-wrap">
             <div class="col-md-7" id="left-box">
                 <div class="form h-100">
-                    <h3>Send us a message</h3>
+                    <h3 class="blue-texted">Send us a message</h3>
                     <form class="mb-5" method="post" id="contactForm" name="contactForm">
                         <div class="row">
                             <div class="col-md-6 form-group mb-4">
-                                <label class="col-form-label">Name *</label>
+                                <label class="col-form-label blue-texted">Name *</label>
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
                             </div>
                             <div class="col-md-6 form-group mb-4">
-                                <label class="col-form-label">Email *</label>
+                                <label class="col-form-label blue-texted">Email *</label>
                                 <input type="text" class="form-control" name="email" id="email"  placeholder="Your email">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6 form-group mb-4">
-                                <label class="col-form-label">Phone</label>
+                                <label class="col-form-label blue-texted">Phone</label>
                                 <input type="text" class="form-control" name="phone" id="phone"  placeholder="Phone #">
                             </div>
                             <div class="col-md-6 form-group mb-4">
-                                <label class="col-form-label">Company</label>
+                                <label class="col-form-label blue-texted">Company</label>
                                 <input type="text" class="form-control" name="company" id="company"  placeholder="Company  name">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-12 form-group mb-4" id="defix">
-                                <label for="message" class="col-form-label">Message *</label>
+                                <label for="message" class="col-form-label blue-texted">Message *</label>
                                 <textarea class="form-control" name="content" id="message" cols="30" rows="4"  placeholder="Write your message"></textarea>
                             </div>
                         </div>
@@ -103,7 +107,7 @@
             </div>
             <div id="right-box">
                 <div class="contact-info h-100">
-                    <h3>Contact Information</h3>
+                    <h3 class="black-texted">Contact Information</h3>
                     <ul class="list-unstyled">
                         <li id="map">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d761.7413040450225!2d44.513639554349396!3d40.209836684346755!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abd4badf538f9%3A0x6a4aef9572fe3521!2zNTIgTWFtaWtvbmlhbnRjIHBva2hvYywgWWVyZXZhbiAwMDUxLCDQkNGA0LzQtdC90LjRjw!5e0!3m2!1sru!2s!4v1620759139810!5m2!1sru!2s" width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -111,16 +115,16 @@
                     </ul>
                     <ul class="list-unstyled" id="address-book">
                         <li class="d-flex">
-                            <span class="wrap-icon icon-room mr-3"></span>
-                            <span class="text">RA, Yerevan, Khachatryan 26/3</span>
+                            <span class="wrap-icon icon-room mr-3 blue-texted"></span>
+                            <span class="text black-texted">RA, Yerevan, Khachatryan 26/3</span>
                         </li>
                         <li class="d-flex">
-                            <span class="wrap-icon icon-phone mr-3"></span>
-                            <span class="text">+374 91 007591</span>
+                            <span class="wrap-icon icon-phone mr-3 blue-texted"></span>
+                            <span class="text black-texted">+374 91 007591</span>
                         </li>
                         <li class="d-flex">
-                            <span class="wrap-icon icon-envelope mr-3"></span>
-                            <span class="text">samuel.papyan170@gmail.com</span>
+                            <span class="wrap-icon icon-envelope mr-3 blue-texted"></span>
+                            <span class="text black-texted">samuel.papyan170@gmail.com</span>
                         </li>
                     </ul>
                 </div>
